@@ -30,7 +30,7 @@ class CatatanBumilFragment : Fragment(), CatatanBumilActivityContract.View {
     ): View? {
         _binding = FragmentCatatanBumilBinding.inflate(inflater, container, false)
         val view = binding.root
-        presenter = CatatanBumilPresenter(this@CatatanBumilFragment)
+        presenter = CatatanBumilPresenter(this)
         return view
     }
 

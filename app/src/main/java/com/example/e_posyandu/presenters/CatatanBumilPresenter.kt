@@ -4,7 +4,6 @@ import com.example.e_posyandu.contracts.CatatanBumilActivityContract
 import com.example.e_posyandu.models.IbuHamil
 import com.example.e_posyandu.responses.WrappedListResponse
 import com.example.e_posyandu.utilities.APIClient
-import com.example.e_posyandu.utilities.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
