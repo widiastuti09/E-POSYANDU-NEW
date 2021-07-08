@@ -3,16 +3,15 @@ package com.example.e_posyandu.contracts
 import android.content.Context
 
 interface LoginActivityContract {
-    interface LoginView{
+    interface LoginActivityView {
         fun showToast(message : String)
         fun successLogin()
         fun showLoading()
         fun hideLoading()
     }
 
-    interface LoginPresenter{
-        fun login(email : String, password: String, context: Context)
-
+    interface LoginActivityPresenter {
+        fun login(email : String, password: String, context : Context)
         fun destroy()
     }
 }
