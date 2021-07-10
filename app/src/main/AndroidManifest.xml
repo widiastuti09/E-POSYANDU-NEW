@@ -16,7 +16,9 @@
         <activity android:name=".DetailCatatanAnakActivity" />
         <activity android:name=".DetailPenimbanganBumilActivity" />
         <activity android:name=".DetailCatatanBumilActivity" />
-        <activity android:name=".DetailPenimbanganActivity" />
+        <activity android:name=".DetailPenimbanganActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
         <activity android:name=".ProgramKesehatanActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

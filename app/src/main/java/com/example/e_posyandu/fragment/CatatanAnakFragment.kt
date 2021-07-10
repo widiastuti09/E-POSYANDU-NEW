@@ -1,5 +1,6 @@
 package com.example.e_posyandu.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,22 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.e_posyandu.R
+import com.example.e_posyandu.DetailCatatanAnakActivity
 import com.example.e_posyandu.adapters.CatatanAnakAdapter
+import com.example.e_posyandu.adapters.onAdapterClick
 import com.example.e_posyandu.contracts.CatatanAnakActivityContract
 import com.example.e_posyandu.databinding.FragmentCatatanAnakBinding
-import com.example.e_posyandu.databinding.FragmentCatatanBumilBinding
 import com.example.e_posyandu.models.Anak
 import com.example.e_posyandu.presenters.CatatanAnakPresenter
-import com.example.e_posyandu.presenters.CatatanBumilPresenter
 import com.example.e_posyandu.utilities.Constants
 
 
-class CatatanAnakFragment : Fragment(), CatatanAnakActivityContract.View {
+class CatatanAnakFragment : Fragment(), CatatanAnakActivityContract.View{
 
     private var _binding : FragmentCatatanAnakBinding? = null
     private val binding get() = _binding!!
-
     private var presenter : CatatanAnakActivityContract.presenter? = null
     private lateinit var anakAdapter : CatatanAnakAdapter
 
@@ -42,7 +41,15 @@ class CatatanAnakFragment : Fragment(), CatatanAnakActivityContract.View {
 
     override fun attacthToRecycler(anak: List<Anak>) {
         binding.rvDaftarAnak.apply {
-            anakAdapter = CatatanAnakAdapter(anak, requireActivity())
+            anakAdapter = CatatanAnakAdapter(anak, requireActivity(), object : onAdapterClick{
+                override fun onDetailAnak(anak: Anak) {
+                    startActivity(Intent(activity, DetailCatatanAnakActivity::class.java).apply{
+                        putExtra("userIdAnak", anak.id)
+                    })
+                }
+
+
+            })
             val mlayoutManager = LinearLayoutManager(activity)
             layoutManager = mlayoutManager
             adapter = anakAdapter
@@ -74,5 +81,8 @@ class CatatanAnakFragment : Fragment(), CatatanAnakActivityContract.View {
         super.onResume()
         getAnak()
     }
+
+
+
 
 }
