@@ -9,11 +9,14 @@ import com.example.e_posyandu.R
 import com.example.e_posyandu.models.Anak
 import kotlinx.android.synthetic.main.item_daftar_anak.view.*
 
-class CatatanAnakAdapter(private var anak : List<Anak>, private var context : Context) : RecyclerView.Adapter<CatatanAnakAdapter.MyHolder>() {
+class CatatanAnakAdapter(private var anak : List<Anak>, private var context : Context, private val listener : onAdapterClick) : RecyclerView.Adapter<CatatanAnakAdapter.MyHolder>() {
 
     inner class MyHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bind(anak : Anak, context: Context){
             itemView.tvNamaAnak.text = anak.namabalita
+            itemView.setOnClickListener {
+                listener.onDetailAnak(anak)
+            }
         }
     }
 
@@ -25,3 +28,8 @@ class CatatanAnakAdapter(private var anak : List<Anak>, private var context : Co
 
     override fun getItemCount(): Int = anak.size
 }
+
+interface onAdapterClick{
+    fun onDetailAnak(anak : Anak)
+}
+

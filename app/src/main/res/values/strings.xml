@@ -49,4 +49,10 @@
     <string name="JadwalImunisasi">Jadwal imunisasi</string>
     <string name="namaImunisasi">Nama Imunisasi</string>
     <string name="status">Status</string>
+    <string name="email">Email</string>
+    <string name="CatatanPenimbangan">Catatan Penimbangan Anak</string>
+    <string name="CatatanPenimbanganBumil">Catatan Penimbangan Bumil</string>
+    <string name="CatatanKesehatanBumil">Catatan Kesehatan Bumil</string>
+    <string name="CatatanKesehatanLansia">Catatan Kesehatan Lansia</string>
+    <string name="DetailPenimbanganAnak">Detail Penimbangan Anak</string>
 </resources>

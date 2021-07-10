@@ -1,8 +1,6 @@
 package com.example.e_posyandu.webservices
 
-import com.example.e_posyandu.models.Anak
-import com.example.e_posyandu.models.IbuHamil
-import com.example.e_posyandu.models.User
+import com.example.e_posyandu.models.*
 import com.example.e_posyandu.responses.WrappedListResponse
 import com.example.e_posyandu.responses.WrappedResponse
 import retrofit2.Call
@@ -25,4 +23,16 @@ interface APIServices {
     fun getIbuHamil(
         @Header("Authorization") api_token : String,
     ) : Call<WrappedListResponse<IbuHamil>>
+
+    @GET("lansia")
+    fun getLansia(
+        @Header("Authorization") api_token: String
+    ):Call<WrappedListResponse<Lansia>>
+
+
+    @GET("penimbangan-balita/{id}")
+    fun getPenimbanganAnak(
+            @Header("Authorization") api_token: String,
+            @Path("id")id : String
+    ): Call<WrappedListResponse<PenimbanganAnak>>
 }
