@@ -55,4 +55,6 @@
     <string name="CatatanKesehatanBumil">Catatan Kesehatan Bumil</string>
     <string name="CatatanKesehatanLansia">Catatan Kesehatan Lansia</string>
     <string name="DetailPenimbanganAnak">Detail Penimbangan Anak</string>
+    <string name="CatatanPemeriksaanBumil">Catatan Pemeriksaan Ibu hamil</string>
+    <string name="JadwalLansia">Jadwal Lansia</string>
 </resources>

@@ -29,10 +29,24 @@ interface APIServices {
         @Header("Authorization") api_token: String
     ):Call<WrappedListResponse<Lansia>>
 
-
     @GET("penimbangan-balita/{id}")
     fun getPenimbanganAnak(
             @Header("Authorization") api_token: String,
             @Path("id")id : String
     ): Call<WrappedListResponse<PenimbanganAnak>>
+
+
+    @GET("pemeriksaan-bumil/{id}")
+        fun getPemeriksaanBumil(
+            @Header("Authorization") api_token: String,
+            @Path("id")id : String
+        ): Call<WrappedListResponse<PemeriksaanBumil>>
+
+
+    @GET("pemeriksaan-lansia/{id}")
+        fun getPemeriksaanLansia(
+            @Header("Authorization") api_token: String,
+            @Path("id")id : String
+        ):Call<WrappedListResponse<PemeriksaanLansia>>
+
 }

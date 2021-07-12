@@ -22,7 +22,7 @@ class DetailPenimbanganActivity : AppCompatActivity() {
     private fun getPenimbangan() : PenimbanganAnak = intent.getParcelableExtra("penimbangan")!!
     private fun showDataToView(){
         binding.tvTanggal.setText(getPenimbangan().tanggal)
-        binding.tvBeratBadan.setText(getPenimbangan().beratbadan)
+        binding.tvBeratBadan.setText(getPenimbangan().beratbadan + " Kg")
         binding.tvJenisVitamin.setText(getPenimbangan().vitamin)
     }
 }
