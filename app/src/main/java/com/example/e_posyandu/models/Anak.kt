@@ -24,5 +24,5 @@ data class Anak (
     @SerializedName("user_id") var user_id : String? = null,
     @SerializedName("created_at") var created_at : String? = null,
     @SerializedName("updated_at") var updated_at : String? = null,
-    @SerializedName("id_ibu") var id_ibu : String? = null,
+    @SerializedName("id_ibu") var id_ibu : String? = null
         ) : Parcelable

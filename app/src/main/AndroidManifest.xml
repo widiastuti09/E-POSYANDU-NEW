@@ -11,15 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EPOSYANDU">
-        <activity android:name=".DetailPemeriksaanLansiaActivity"></activity>
+        <activity android:name=".DetailPemeriksaanLansiaActivity"/>
         <activity android:name=".DetailCatatanLansiaActivity" />
         <activity android:name=".DetailBumilActivity" />
         <activity android:name=".DetailCatatanAnakActivity" />
         <activity android:name=".DetailPenimbanganBumilActivity" />
         <activity android:name=".DetailCatatanBumilActivity" />
-        <activity
-            android:name=".DetailPenimbanganActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".DetailPenimbanganActivity"/>
         <activity android:name=".ProgramKesehatanActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

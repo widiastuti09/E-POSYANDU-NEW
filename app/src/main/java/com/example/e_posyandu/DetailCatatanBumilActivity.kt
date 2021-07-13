@@ -13,7 +13,15 @@ class DetailCatatanBumilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailCatatanBumilBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val actionbar = supportActionBar
+        actionbar!!.setDisplayHomeAsUpEnabled(true)
+        actionbar.title = "Detail Catatan Ibu Hamil"
         setupViewPager()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun setupViewPager(){

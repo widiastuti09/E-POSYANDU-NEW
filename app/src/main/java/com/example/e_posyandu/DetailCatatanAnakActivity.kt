@@ -15,7 +15,15 @@ class DetailCatatanAnakActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailCatatanAnakBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val actionbar = supportActionBar
+        actionbar!!.setDisplayHomeAsUpEnabled(true)
+        actionbar.title = "Detail Catatan Anak"
         setupViewPager()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun setupViewPager(){

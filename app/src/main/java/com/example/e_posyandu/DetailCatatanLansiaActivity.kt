@@ -13,7 +13,15 @@ class DetailCatatanLansiaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailCatatanLansiaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val actionbar = supportActionBar
+        actionbar!!.setDisplayHomeAsUpEnabled(true)
+        actionbar.title = "Detail Catatan Lansia"
         setupViewPager()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun setupViewPager(){

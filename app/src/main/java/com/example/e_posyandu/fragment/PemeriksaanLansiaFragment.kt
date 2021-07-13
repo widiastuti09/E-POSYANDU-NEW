@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_posyandu.DetailPemeriksaanLansiaActivity
@@ -49,6 +50,7 @@ class PemeriksaanLansiaFragment : Fragment() {
     }
 
     private fun getPemeriksaanLansia(token: String, id: String) {
+        showLoading()
         APIClient.APIService().getPemeriksaanLansia("Bearer " +token, id).enqueue(object :
             Callback<WrappedListResponse<PemeriksaanLansia>> {
             override fun onResponse(
@@ -60,14 +62,18 @@ class PemeriksaanLansiaFragment : Fragment() {
                     if (body != null && body.status.equals(200)) {
                         showDatatoRecycler(body.data)
                     }
+                }else{
+                    Toast.makeText(activity, "Terjadi Kesalahan, coba lagi nanti", Toast.LENGTH_LONG).show()
                 }
+                hideLoading()
             }
 
             override fun onFailure(
                 call: Call<WrappedListResponse<PemeriksaanLansia>>,
                 t: Throwable
             ) {
-                Log.e("Salah gblk", "${t.message}")
+                Toast.makeText(activity, "Tidak dapat terkoneksi dengan server", Toast.LENGTH_LONG).show()
+                hideLoading()
             }
         })
     }
@@ -92,6 +98,20 @@ class PemeriksaanLansiaFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         getTokenandIdLansia()
+    }
+
+    private fun showLoading(){
+        binding.loading.apply{
+            isIndeterminate = true
+        }
+    }
+
+    private fun hideLoading(){
+        binding.loading.apply{
+            isIndeterminate = false
+            progress = 0
+            visibility = View.GONE
+        }
     }
 }
 
