@@ -66,6 +66,7 @@ class PenimbanganAnakFragment : Fragment(),PenimbanganAnakFragmentContract.View 
             layoutManager = mlayoutManager
             adapter = penimbanganAdapter
         }
+        Log.d("Penimbangan Anak", "$penimbangan ")
     }
 
     override fun showLoading() {

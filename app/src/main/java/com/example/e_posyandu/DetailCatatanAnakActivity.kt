@@ -15,16 +15,25 @@ class DetailCatatanAnakActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailCatatanAnakBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val actionbar = supportActionBar
+        actionbar!!.setDisplayHomeAsUpEnabled(true)
+        actionbar.title = "Detail Catatan Anak"
         setupViewPager()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun setupViewPager(){
         val userId = intent.getStringExtra("userIdAnak")
-        val loginViewPager = ViewPagerAnakAdapter(supportFragmentManager)
+        val anakViewPager = ViewPagerAnakAdapter(supportFragmentManager)
         val fragmentPenimbangan = PenimbanganAnakFragment.getUserIdAnak(userId!!)
-        loginViewPager.addFragment(JadwalImunisasiAnakFragment(), userId)
-        loginViewPager.addFragment(fragmentPenimbangan, userId)
-        binding.viewPager.adapter = loginViewPager
+        val fragmentJadwal = JadwalImunisasiAnakFragment.getUserIdAnak(userId)
+        anakViewPager.addFragment(fragmentJadwal, userId)
+        anakViewPager.addFragment(fragmentPenimbangan, userId)
+        binding.viewPager.adapter = anakViewPager
         binding.tabs.setupWithViewPager(binding.viewPager)
         println("UserId Detail = $userId")
     }

@@ -11,18 +11,21 @@ class DetailPenimbanganActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailPenimbanganBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val actionbar = supportActionBar
+        actionbar!!.setDisplayHomeAsUpEnabled(true)
+        actionbar.title = "Detail Penimbangan"
         showDataToView()
-        backButtonPressed()
     }
 
-
-    private fun backButtonPressed(){
-        binding.backbutton.setOnClickListener { finish() }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
+
     private fun getPenimbangan() : PenimbanganAnak = intent.getParcelableExtra("penimbangan")!!
     private fun showDataToView(){
         binding.tvTanggal.setText(getPenimbangan().tanggal)
-        binding.tvBeratBadan.setText(getPenimbangan().beratbadan)
+        binding.tvBeratBadan.setText(getPenimbangan().beratbadan + " Kg")
         binding.tvJenisVitamin.setText(getPenimbangan().vitamin)
     }
 }

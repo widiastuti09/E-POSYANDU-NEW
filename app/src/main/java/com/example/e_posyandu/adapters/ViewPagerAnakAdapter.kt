@@ -22,7 +22,6 @@ class ViewPagerAnakAdapter(supportFragmentManager: FragmentManager): FragmentPag
             else ->{
                 PenimbanganAnakFragment()
             }
-
         }
     }
 

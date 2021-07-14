@@ -55,4 +55,19 @@
     <string name="CatatanKesehatanBumil">Catatan Kesehatan Bumil</string>
     <string name="CatatanKesehatanLansia">Catatan Kesehatan Lansia</string>
     <string name="DetailPenimbanganAnak">Detail Penimbangan Anak</string>
+    <string name="CatatanPemeriksaanBumil">Catatan Pemeriksaan Ibu hamil</string>
+    <string name="JadwalLansia">Jadwal Lansia</string>
+    <string name="CatatanPemeriksaanLansia">Catatan Pemeriksaan Lansia</string>
+    <string name="DetailPemeriksaanLansia">"Detail Pemeriksaan "</string>
+    <string name="beratBadan">Berat Badan</string>
+    <string name="tinggibadan">Tinggi Badan</string>
+    <string name="LingkarPinggang">Lingkar Pinggang</string>
+    <string name="Glukosa">Gula darah</string>
+    <string name="LemakTubuh">Lemak Tubuh</string>
+    <string name="LemakPerut">Lemak Perut</string>
+    <string name="IMT">IMT</string>
+    <string name="Kolesterol">Kolesterol</string>
+    <string name="AsamUrat">Asam Urat</string>
+    <string name="Merokok">Merokok</string>
+    <string name="Posyandu">Pos Pelayanan Terpadu</string>
 </resources>
