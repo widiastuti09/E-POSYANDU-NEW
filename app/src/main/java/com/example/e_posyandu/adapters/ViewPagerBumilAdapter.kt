@@ -35,7 +35,7 @@ class ViewPagerBumilAdapter(supportFragmentManager: FragmentManager): FragmentPa
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position){
-            0 -> "Penimbangan"
+            0 -> "Jadwal"
             else -> "Pemeriksaan"
 
         }
