@@ -70,4 +70,11 @@
     <string name="AsamUrat">Asam Urat</string>
     <string name="Merokok">Merokok</string>
     <string name="Posyandu">Pos Pelayanan Terpadu</string>
+    <string name="JadwalBumil">Jadwal Ibu Hamil</string>
+    <string name="Hemoglobin">Hemoglobin</string>
+    <string name="HTP">Hari Taksiran Persalinan</string>
+    <string name="HPHT">Hari pertama terakhir haid</string>
+    <string name="HamilKe">Hamil ke</string>
+    <string name="PersalinanKe">Persalinan ke</string>
+    <string name="JumlahKeguguran">Jumlah keguguran</string>
 </resources>
