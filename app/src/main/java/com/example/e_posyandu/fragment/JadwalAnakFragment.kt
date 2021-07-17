@@ -1,5 +1,6 @@
 package com.example.e_posyandu.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,24 +8,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.e_posyandu.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_posyandu.DetailJadwalAnakActivity
+import com.example.e_posyandu.adapters.JadwalAnakAdapter
+import com.example.e_posyandu.adapters.JadwalAnakListener
 import com.example.e_posyandu.contracts.JadwalAnakFragmentContract
-import com.example.e_posyandu.databinding.FragmentJadwalImunisasiAnakBinding
+import com.example.e_posyandu.databinding.FragmentJadwalAnakBinding
 import com.example.e_posyandu.models.JadwalAnak
 import com.example.e_posyandu.presenters.JadwalAnakFragmentPresenter
 import com.example.e_posyandu.utilities.Constants
 
 
-class JadwalImunisasiAnakFragment : Fragment(), JadwalAnakFragmentContract.View {
+class JadwalAnakFragment : Fragment(), JadwalAnakFragmentContract.View {
 
-    private var _binding : FragmentJadwalImunisasiAnakBinding? = null
+    private var _binding : FragmentJadwalAnakBinding? = null
     private val  binding get() = _binding!!
     private var presenter : JadwalAnakFragmentContract.presenter? = null
+    private lateinit var jadwalAnakAdapter : JadwalAnakAdapter
 
     companion object{
         private var idAnak: String? = null
-        fun getUserIdAnak(idAnak: String): JadwalImunisasiAnakFragment {
-            val fragment = JadwalImunisasiAnakFragment()
+        fun getUserIdAnak(idAnak: String): JadwalAnakFragment {
+            val fragment = JadwalAnakFragment()
             this.idAnak = idAnak
             return fragment
         }
@@ -34,7 +39,7 @@ class JadwalImunisasiAnakFragment : Fragment(), JadwalAnakFragmentContract.View 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentJadwalImunisasiAnakBinding.inflate(inflater, container, false)
+        _binding = FragmentJadwalAnakBinding.inflate(inflater, container, false)
         val view = binding.root
         presenter = JadwalAnakFragmentPresenter(this)
         return view
@@ -47,6 +52,17 @@ class JadwalImunisasiAnakFragment : Fragment(), JadwalAnakFragmentContract.View 
 
     override fun attacthToRecycler(jadwalAnak: List<JadwalAnak>) {
         Log.d("Jadwal Anak", " $jadwalAnak")
+        jadwalAnakAdapter = JadwalAnakAdapter(jadwalAnak, object : JadwalAnakListener{
+            override fun onDetailJadwalAnak(jadwalAnak: JadwalAnak) {
+                startActivity(Intent(activity, DetailJadwalAnakActivity::class.java).apply{
+                    putExtra("jadwalAnak", jadwalAnak)
+                })
+            }
+        })
+        binding.rvJadwalAnak.apply{
+            adapter = jadwalAnakAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
     }
 
     override fun showLoading() {

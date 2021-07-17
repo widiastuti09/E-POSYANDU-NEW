@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.JadwalImunisasiAnakFragment">
+    tools:context=".fragment.JadwalAnakFragment">
 
     <TextView
         android:id="@+id/tvTitle"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvJadwalImunisasi"
+        android:id="@+id/rvJadwalAnak"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        tools:listitem="@layout/item_jadwal_imunisasi" />
+        tools:listitem="@layout/item_jadwal_anak" />
 
     <ProgressBar
         android:id="@+id/loading"

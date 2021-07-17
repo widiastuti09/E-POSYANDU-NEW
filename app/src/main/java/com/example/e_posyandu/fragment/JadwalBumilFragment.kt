@@ -1,5 +1,6 @@
 package com.example.e_posyandu.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,6 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_posyandu.DetailJadwalBumilActivity
+import com.example.e_posyandu.adapters.JadwalBumilAdapter
+import com.example.e_posyandu.adapters.JadwalBumilListener
 import com.example.e_posyandu.contracts.JadwalBumilFragmentContract
 import com.example.e_posyandu.databinding.FragmentJadwalBumilBinding
 import com.example.e_posyandu.models.JadwalBumil
@@ -19,6 +24,7 @@ class JadwalBumilFragment : Fragment(), JadwalBumilFragmentContract.View {
     private var _binding : FragmentJadwalBumilBinding? = null
     private val binding get() = _binding!!
     private var presenter : JadwalBumilFragmentContract.presenter? = null
+    private lateinit var jadwalBumilAdapter : JadwalBumilAdapter
 
     companion object{
         private var idBumil : String? = null
@@ -45,6 +51,17 @@ class JadwalBumilFragment : Fragment(), JadwalBumilFragmentContract.View {
 
     override fun attacthToRecycler(jadwalBumil: List<JadwalBumil>) {
         Log.d("Jadwal Bumil", " $jadwalBumil")
+        jadwalBumilAdapter = JadwalBumilAdapter(jadwalBumil, object : JadwalBumilListener{
+            override fun onDetailJadwalBumil(jadwalBumil: JadwalBumil) {
+                startActivity(Intent(activity, DetailJadwalBumilActivity::class.java).apply{
+                    putExtra("jadwalBumil", jadwalBumil)
+                })
+            }
+        })
+        binding.rvJadwalBumil.apply{
+            adapter = jadwalBumilAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
     }
 
     override fun showLoading() {

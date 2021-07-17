@@ -9,16 +9,34 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_anak"
-                    android:icon="@drawable/ic_feed"
+                    android:icon="@drawable/ic_take_care_of_your_children"
                     android:title="@string/menu_anak" />
                 <item
                     android:id="@+id/nav_bumil"
-                    android:icon="@drawable/ic_feed"
+                    android:icon="@drawable/ic_pregnant"
                     android:title="@string/menu_bumil" />
                 <item
                     android:id="@+id/nav_lansia"
-                    android:icon="@drawable/ic_feed"
+                    android:icon="@drawable/ic_old_woman"
                     android:title="@string/menu_lansia" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:title="Lainnya"
+        android:id="@+id/other">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_account"
+                    android:icon="@drawable/ic_person"
+                    android:title="@string/Account" />
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_about"
+                    android:title="@string/menu_about" />
                 <item
                     android:id="@+id/nav_logout"
                     android:icon="@drawable/ic_logout"

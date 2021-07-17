@@ -65,6 +65,34 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:text="@string/JenisImunisasi"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvJenisImunisasi"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/JenisImunisasi"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/bb"
                 android:textColor="@color/black"
                 android:textSize="18sp"  />
@@ -88,14 +116,13 @@
 
         </TableRow>
 
-
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="@string/tb"
+                android:text="@string/IMP"
                 android:textColor="@color/black"
                 android:textSize="18sp"  />
 
@@ -108,10 +135,10 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tvTinggiBadan"
+                android:id="@+id/tvIMP"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/tb"
+                android:text="@string/IMP"
                 android:layout_marginStart="10dp"
                 android:textSize="18sp"
                 />
@@ -124,7 +151,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="@string/RiwayatPenyakit"
+                android:text="@string/KIA"
                 android:textColor="@color/black"
                 android:textSize="18sp"  />
 
@@ -137,15 +164,14 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tvRiwayatPenyakit"
+                android:id="@+id/tvKIA"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/RiwayatPenyakit"
+                android:text="@string/KIA"
                 android:layout_marginStart="10dp"
                 android:textSize="18sp"
                 />
         </TableRow>
-
 
         <TableRow android:layout_marginTop="20dip">
 
@@ -175,34 +201,6 @@
                 />
         </TableRow>
 
-
-        <TableRow android:layout_marginTop="20dip">
-
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/Keterangan"
-                android:textColor="@color/black"
-                android:textSize="18sp"  />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/titikdua"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tvKeterangan"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="@string/Keterangan"
-                android:layout_marginStart="10dp"
-                android:textSize="18sp"
-                />
-        </TableRow>
 
     </TableLayout>
 

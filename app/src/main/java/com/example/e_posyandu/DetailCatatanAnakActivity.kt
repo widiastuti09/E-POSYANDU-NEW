@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.e_posyandu.adapters.ViewPagerAnakAdapter
 import com.example.e_posyandu.databinding.ActivityDetailCatatanAnakBinding
-import com.example.e_posyandu.fragment.JadwalImunisasiAnakFragment
+import com.example.e_posyandu.fragment.JadwalAnakFragment
 import com.example.e_posyandu.fragment.PenimbanganAnakFragment
 
 class DetailCatatanAnakActivity : AppCompatActivity() {
@@ -30,7 +30,7 @@ class DetailCatatanAnakActivity : AppCompatActivity() {
         val userId = intent.getStringExtra("userIdAnak")
         val anakViewPager = ViewPagerAnakAdapter(supportFragmentManager)
         val fragmentPenimbangan = PenimbanganAnakFragment.getUserIdAnak(userId!!)
-        val fragmentJadwal = JadwalImunisasiAnakFragment.getUserIdAnak(userId)
+        val fragmentJadwal = JadwalAnakFragment.getUserIdAnak(userId)
         anakViewPager.addFragment(fragmentJadwal, userId)
         anakViewPager.addFragment(fragmentPenimbangan, userId)
         binding.viewPager.adapter = anakViewPager

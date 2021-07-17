@@ -8,7 +8,7 @@
     <string name="tanggal">Tanggal</string>
     <string name="DaftarAnak">Daftar Anak</string>
     <string name="namaAnak">Nama Anak</string>
-    <string name="Detail">Detail</string>
+    <string name="Detail">Detail>></string>
     <string name="DetailPenimbangan">Detail Penimbangan</string>
     <string name="bb">BB</string>
     <string name="tb">TB</string>
@@ -77,4 +77,16 @@
     <string name="HamilKe">Hamil ke</string>
     <string name="PersalinanKe">Persalinan ke</string>
     <string name="JumlahKeguguran">Jumlah keguguran</string>
+    <string name="JenisImunisasi">Jenis Imunisasi</string>
+    <string name="IMP">IMP</string>
+    <string name="KIA">KIA</string>
+    <string name="Account">Akun</string>
+    <string name="menu_about">Tentang</string>
+    <string name="IbuHamilResikoTinggi">Ibu hamil resiko tinggi</string>
+    <string name="GPA">G/P/A</string>
+    <string name="Asuransi">Asuransi</string>
+    <string name="ResikoTinggi">Resiko Tinggi</string>
+    <string name="HPL">HPL</string>
+    <string name="WaliBumil">Wali Bumil</string>
+    <string name="waktu">Waktu</string>
 </resources>

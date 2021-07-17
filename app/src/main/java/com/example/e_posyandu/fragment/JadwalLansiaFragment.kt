@@ -1,5 +1,6 @@
 package com.example.e_posyandu.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,7 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_posyandu.DetailJadwalLansiaActivity
 import com.example.e_posyandu.R
+import com.example.e_posyandu.adapters.JadwalLansiaAdapter
+import com.example.e_posyandu.adapters.JadwalLansiaListener
 import com.example.e_posyandu.contracts.JadwalLansiaFragmentContract
 import com.example.e_posyandu.databinding.FragmentJadwalLansiaBinding
 import com.example.e_posyandu.models.JadwalLansia
@@ -20,6 +25,7 @@ class JadwalLansiaFragment : Fragment(), JadwalLansiaFragmentContract.View {
     private var _binding : FragmentJadwalLansiaBinding? = null
     private val binding get() = _binding!!
     private var presenter : JadwalLansiaFragmentContract.presenter? = null
+    private lateinit var jadwalLansiaAdapter : JadwalLansiaAdapter
 
     companion object{
         private var idLansia : String? = null
@@ -44,6 +50,17 @@ class JadwalLansiaFragment : Fragment(), JadwalLansiaFragmentContract.View {
 
     override fun attacthToRecycler(jadwalLansia: List<JadwalLansia>) {
         Log.d("Jadwal Lansia", " $jadwalLansia")
+        jadwalLansiaAdapter = JadwalLansiaAdapter(jadwalLansia, object : JadwalLansiaListener{
+            override fun onDetailJadwalLansia(jadwalLansia: JadwalLansia) {
+                startActivity(Intent(activity, DetailJadwalLansiaActivity::class.java).apply{
+                    putExtra("jadwalLansia", jadwalLansia)
+                })
+            }
+        })
+        binding.rvJadwalLansia.apply{
+            adapter = jadwalLansiaAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
     }
 
     override fun showLoading() {
