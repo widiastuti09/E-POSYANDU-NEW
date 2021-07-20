@@ -5,7 +5,7 @@ import com.example.e_posyandu.models.PemeriksaanBumil
 
 interface PemeriksaanBumilFragmentContract {
     interface View {
-        fun attacthToRecycler(pemeriksaanBumil : List<PemeriksaanBumil>)
+        fun attacthToView(pemeriksaanBumil : List<PemeriksaanBumil>)
         fun showLoading()
         fun hideLoading()
         fun showToast(message : String)

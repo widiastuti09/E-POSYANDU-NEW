@@ -19,20 +19,278 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvKesehatanBumil"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHeader"
-        tools:listitem="@layout/item_penimbangan_bumil" />
+        app:layout_constraintTop_toBottomOf="@id/tvHeader">
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/namaBumil"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvnamaBumil"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/namaBumil"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/beratBadan"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvBeratBadan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bb"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/tinggibadan"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvTinggiBadan"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tb"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/Hemoglobin"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvHemoglobin"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Hemoglobin"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/HTP"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvHTP"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/HTP"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp" />
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/HPHT"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/tvHPHT"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/HPHT"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/HamilKe"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvHamilKe"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/HamilKe"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/PersalinanKe"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvPersalinanKe"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/PersalinanKe"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/JumlahKeguguran"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvJumlahKeguguran"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/JumlahKeguguran"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
 
     <ProgressBar
         android:id="@+id/loading"

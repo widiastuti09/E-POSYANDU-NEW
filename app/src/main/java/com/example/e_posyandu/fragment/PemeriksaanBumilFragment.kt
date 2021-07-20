@@ -43,8 +43,18 @@ class PemeriksaanBumilFragment : Fragment(), PemeriksaanBumilFragmentContract.Vi
         presenter?.getDataPemeriksaanBumil(token, idBumil!!)
     }
 
-    override fun attacthToRecycler(pemeriksaanBumil: List<PemeriksaanBumil>) {
-        Log.d("Pemeriksaan Bumil", "$pemeriksaanBumil")
+    override fun attacthToView(pemeriksaanBumil: List<PemeriksaanBumil>) {
+        if (pemeriksaanBumil != null){
+            val hemoglobin = pemeriksaanBumil[0].hemoglobin_atas + "/" + pemeriksaanBumil[0].hemoglobin_bawah
+            binding.tvTinggiBadan.text = pemeriksaanBumil[0].tinggibadan + " Cm"
+            binding.tvHemoglobin.text = hemoglobin
+            binding.tvHTP.text = pemeriksaanBumil[0].htp
+            binding.tvHPHT.text = pemeriksaanBumil[0].hpht
+            binding.tvBeratBadan.text = pemeriksaanBumil[0].beratbadan + " Kg"
+            binding.tvHamilKe.text = pemeriksaanBumil[0].hamilke
+            binding.tvPersalinanKe.text = pemeriksaanBumil[0].persalinanke
+            binding.tvJumlahKeguguran.text = pemeriksaanBumil[0].keguguranke
+        }
     }
 
     override fun showLoading() {

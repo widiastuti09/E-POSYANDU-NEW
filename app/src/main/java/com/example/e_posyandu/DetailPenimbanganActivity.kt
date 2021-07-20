@@ -25,7 +25,10 @@ class DetailPenimbanganActivity : AppCompatActivity() {
     private fun getPenimbangan() : PenimbanganAnak = intent.getParcelableExtra("penimbangan")!!
     private fun showDataToView(){
         binding.tvTanggal.setText(getPenimbangan().tanggal)
+        binding.tvJenisImunisasi.setText(getPenimbangan().jenis_imunisasi)
         binding.tvBeratBadan.setText(getPenimbangan().beratbadan + " Kg")
+        binding.tvIMP.setText(getPenimbangan().imp)
+        binding.tvKIA.setText(getPenimbangan().kia)
         binding.tvJenisVitamin.setText(getPenimbangan().vitamin)
     }
 }

@@ -4,8 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.e_posyandu.adapters.ViewPagerBumilAdapter
 import com.example.e_posyandu.databinding.ActivityDetailCatatanBumilBinding
+import com.example.e_posyandu.fragment.BumilResikoTinggiFragment
 import com.example.e_posyandu.fragment.PemeriksaanBumilFragment
-import com.example.e_posyandu.fragment.PenimbanganBumilFragment
+import com.example.e_posyandu.fragment.JadwalBumilFragment
 
 class DetailCatatanBumilActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailCatatanBumilBinding
@@ -26,11 +27,13 @@ class DetailCatatanBumilActivity : AppCompatActivity() {
 
     private fun setupViewPager(){
         val idBumil = intent.getStringExtra("idBumil")
-        val fragmentPenimabanganBumil = PenimbanganBumilFragment.getIdbumil(idBumil!!)
+        val fragmentJadwalBumil = JadwalBumilFragment.getIdbumil(idBumil!!)
         val fragmentPemeriksaanBumil = PemeriksaanBumilFragment.getIdBumil(idBumil)
+        val fragmentBumilResikoTinggi = BumilResikoTinggiFragment.getIdbumil(idBumil)
         val bumilViewPager = ViewPagerBumilAdapter(supportFragmentManager)
-        bumilViewPager.addFragment(fragmentPenimabanganBumil, idBumil)
+        bumilViewPager.addFragment(fragmentJadwalBumil, idBumil)
         bumilViewPager.addFragment(fragmentPemeriksaanBumil, idBumil)
+        bumilViewPager.addFragment(fragmentBumilResikoTinggi, idBumil)
         binding.viewPagerBumil.adapter = bumilViewPager
         binding.tabsBumil.setupWithViewPager(binding.viewPagerBumil)
     }

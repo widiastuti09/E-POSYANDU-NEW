@@ -9,9 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.e_posyandu.databinding.ActivityMainBinding
-import com.example.e_posyandu.fragment.CatatanAnakFragment
-import com.example.e_posyandu.fragment.CatatanBumilFragment
-import com.example.e_posyandu.fragment.CatatanLansiaFragment
+import com.example.e_posyandu.fragment.*
 import com.example.e_posyandu.utilities.Constants
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +32,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_anak ->setCurrentFragment(CatatanAnakFragment())
                 R.id.nav_bumil ->setCurrentFragment(CatatanBumilFragment())
                 R.id.nav_lansia ->setCurrentFragment(CatatanLansiaFragment())
+                R.id.nav_about ->setCurrentFragment(TentangAplikasiFragment())
+                R.id.nav_account ->setCurrentFragment(AkunFragment())
                 R.id.nav_logout -> logout()
             }
             true

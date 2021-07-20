@@ -28,8 +28,9 @@ class DetailCatatanLansiaActivity : AppCompatActivity() {
         val idLansia = intent.getStringExtra("idLansia")
         val lansiaViewPager = ViewPagerLansiaAdapter(supportFragmentManager)
         val fragmentPemeriksaan = PemeriksaanLansiaFragment.getIdLansia(idLansia!!)
+        val fragmentJadwalLansia = JadwalLansiaFragment.getIdLansia(idLansia)
         lansiaViewPager.addFragment(fragmentPemeriksaan, idLansia)
-        lansiaViewPager.addFragment(JadwalLansiaFragment(), idLansia)
+        lansiaViewPager.addFragment(fragmentJadwalLansia, idLansia)
         binding.viewPagerLansia.adapter = lansiaViewPager
         binding.tabsLansia.setupWithViewPager(binding.viewPagerLansia)
         println("Id Lansia = $idLansia")

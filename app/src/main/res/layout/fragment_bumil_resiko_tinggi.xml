@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.BumilResikoTinggiFragment">
+
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/IbuHamilResikoTinggi"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader">
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/namaBumil"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvnamaBumil"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/namaBumil"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/UmurKehamilan"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvUmurKehamilan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/UmurKehamilan"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/GPA"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvGPA"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/GPA"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/Asuransi"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvAsuransi"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Asuransi"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/ResikoTinggi"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvResikoTinggi"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/ResikoTinggi"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/HPL"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvHPL"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/HPL"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dip">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/WaliBumil"
+                android:textColor="@color/black"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/titikdua"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvWaliBumil"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/WaliBumil"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ class PemeriksaanBumilFragmentPresenter(v : PemeriksaanBumilFragmentContract.Vie
                 if (response.isSuccessful){
                     val body = response.body()
                     if (body != null && body.status.equals(200)){
-                        view?.attacthToRecycler(body.data)
+                        view?.attacthToView(body.data)
                     }
                 }else{
                     view?.showToast("Terjadi kesalahan, silahkan coba lagi lain waktu")

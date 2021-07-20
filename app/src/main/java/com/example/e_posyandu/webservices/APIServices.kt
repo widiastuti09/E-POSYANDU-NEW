@@ -16,18 +16,39 @@ interface APIServices {
 
     @GET("balita")
     fun getBalita(
-        @Header("Authorization") api_token : String,
+        @Header("Authorization") api_token : String
     ) : Call<WrappedListResponse<Anak>>
+
+    @GET("jadwal-balita")
+    fun getJadwalBalita(
+        @Header("Authorization") api_token : String
+    ): Call<WrappedListResponse<JadwalAnak>>
 
     @GET("ibu-hamil")
     fun getIbuHamil(
-        @Header("Authorization") api_token : String,
+        @Header("Authorization") api_token : String
     ) : Call<WrappedListResponse<IbuHamil>>
+
+    @GET("jadwal-bumil")
+    fun getJadwalBumil(
+        @Header("Authorization") api_token : String
+    ): Call<WrappedListResponse<JadwalBumil>>
+
+    @GET("Bumilresti/{id}")
+    fun getBumilResti(
+        @Header("Authorization") api_token : String,
+        @Path("id") id: String
+    ): Call<WrappedListResponse<IbuHamilResikoTinggi>>
 
     @GET("lansia")
     fun getLansia(
         @Header("Authorization") api_token: String
     ):Call<WrappedListResponse<Lansia>>
+
+    @GET("jadwal-lansia")
+    fun getJadwalLansia(
+        @Header("Authorization") api_token : String
+    ): Call<WrappedListResponse<JadwalLansia>>
 
     @GET("penimbangan-balita/{id}")
     fun getPenimbanganAnak(
