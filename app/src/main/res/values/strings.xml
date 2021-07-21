@@ -8,7 +8,7 @@
     <string name="tanggal">Tanggal</string>
     <string name="DaftarAnak">Daftar Anak</string>
     <string name="namaAnak">Nama Anak</string>
-    <string name="Detail">Detail>></string>
+    <string name="Detail">Detail</string>
     <string name="DetailPenimbangan">Detail Penimbangan</string>
     <string name="bb">BB</string>
     <string name="tb">TB</string>
@@ -89,4 +89,6 @@
     <string name="HPL">HPL</string>
     <string name="WaliBumil">Wali Bumil</string>
     <string name="waktu">Waktu</string>
+    <string name="default_notification_channel_id">Posyandu</string>
+    <string name="penyakit">Penyakit</string>
 </resources>

@@ -8,6 +8,7 @@ interface BumilResikoTinggiFragmentContract {
         fun attacthToRecycler(bumilResikoTinggi : List<IbuHamilResikoTinggi>)
         fun showLoading()
         fun hideLoading()
+        fun emptyData()
         fun showToast(message : String)
     }
 

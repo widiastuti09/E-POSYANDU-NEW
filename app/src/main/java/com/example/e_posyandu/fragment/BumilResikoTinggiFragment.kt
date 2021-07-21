@@ -46,12 +46,12 @@ class BumilResikoTinggiFragment : Fragment(), BumilResikoTinggiFragmentContract.
 
     override fun attacthToRecycler(bumilResikoTinggi: List<IbuHamilResikoTinggi>) {
         Log.d("BUmil Resti", " $bumilResikoTinggi")
-        binding.tvUmurKehamilan.text = bumilResikoTinggi[0].umur_hamil + " Bulan"
-        binding.tvGPA.text = bumilResikoTinggi[0].gpa
-        binding.tvAsuransi.text = bumilResikoTinggi[0].asuransi
-        binding.tvResikoTinggi.text = bumilResikoTinggi[0].resiko_tinggi
-        binding.tvHPL.text = bumilResikoTinggi[0].hpl
-        binding.tvWaliBumil.text = bumilResikoTinggi[0].wali_bumil
+//        binding.tvUmurKehamilan.text = bumilResikoTinggi[0].umur_hamil + " Bulan"
+//        binding.tvGPA.text = bumilResikoTinggi[0].gpa
+//        binding.tvAsuransi.text = bumilResikoTinggi[0].asuransi
+//        binding.tvResikoTinggi.text = bumilResikoTinggi[0].resiko_tinggi
+//        binding.tvHPL.text = bumilResikoTinggi[0].hpl
+//        binding.tvWaliBumil.text = bumilResikoTinggi[0].wali_bumil
 
     }
 
@@ -67,6 +67,10 @@ class BumilResikoTinggiFragment : Fragment(), BumilResikoTinggiFragmentContract.
             progress = 0
             visibility = View.GONE
         }
+    }
+
+    override fun emptyData() {
+        binding.emptyData.visibility = View.VISIBLE
     }
 
     override fun showToast(message: String) {
