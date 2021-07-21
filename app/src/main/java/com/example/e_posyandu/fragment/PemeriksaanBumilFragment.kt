@@ -1,4 +1,5 @@
 package com.example.e_posyandu.fragment
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -6,6 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_posyandu.DetailPemeriksaanBumilActivity
+import com.example.e_posyandu.DetailRestiBumilActivity
+import com.example.e_posyandu.adapters.PemeriksaanBumilFragmentAdapter
+import com.example.e_posyandu.adapters.onPemeriksaanBumilListener
 import com.example.e_posyandu.contracts.PemeriksaanBumilFragmentContract
 import com.example.e_posyandu.databinding.FragmentPemeriksaanBumilBinding
 import com.example.e_posyandu.models.PemeriksaanBumil
@@ -18,6 +24,7 @@ class PemeriksaanBumilFragment : Fragment(), PemeriksaanBumilFragmentContract.Vi
     private var _binding : FragmentPemeriksaanBumilBinding? = null
     private val  binding get() = _binding!!
     private var presenter : PemeriksaanBumilFragmentContract.presenter? = null
+    private lateinit var adapterPemeriksaanBumil: PemeriksaanBumilFragmentAdapter
 
     companion object{
         private var idBumil : String? = null
@@ -45,15 +52,19 @@ class PemeriksaanBumilFragment : Fragment(), PemeriksaanBumilFragmentContract.Vi
 
     override fun attacthToView(pemeriksaanBumil: List<PemeriksaanBumil>) {
         if (pemeriksaanBumil != null){
-            val hemoglobin = pemeriksaanBumil[0].hemoglobin_atas + "/" + pemeriksaanBumil[0].hemoglobin_bawah
-            binding.tvTinggiBadan.text = pemeriksaanBumil[0].tinggibadan + " Cm"
-            binding.tvHemoglobin.text = hemoglobin
-            binding.tvHTP.text = pemeriksaanBumil[0].htp
-            binding.tvHPHT.text = pemeriksaanBumil[0].hpht
-            binding.tvBeratBadan.text = pemeriksaanBumil[0].beratbadan + " Kg"
-            binding.tvHamilKe.text = pemeriksaanBumil[0].hamilke
-            binding.tvPersalinanKe.text = pemeriksaanBumil[0].persalinanke
-            binding.tvJumlahKeguguran.text = pemeriksaanBumil[0].keguguranke
+            adapterPemeriksaanBumil = PemeriksaanBumilFragmentAdapter(pemeriksaanBumil, object: onPemeriksaanBumilListener{
+                override fun onDetailClick(pemeriksaan: PemeriksaanBumil) {
+                    val intentRestiBumilDetail = Intent(activity, DetailPemeriksaanBumilActivity::class.java).apply{
+                        putExtra("PEMERIKSAAN_BUMIL", pemeriksaan)
+                    }
+                    activity!!.startActivity(intentRestiBumilDetail)
+                }
+
+            })
+            binding.rvPemeriksaanBumil.apply {
+                layoutManager = LinearLayoutManager(requireActivity())
+                adapter = adapterPemeriksaanBumil
+            }
         }
     }
 

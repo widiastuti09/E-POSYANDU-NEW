@@ -50,5 +50,19 @@ class Constants {
             val pref = context.getSharedPreferences("TOKEN", MODE_PRIVATE)
             pref.edit().clear().apply()
         }
+
+        fun getDeviceToken(context: Context): String {
+            val pref = context.getSharedPreferences("DEVICE_TOKEN", MODE_PRIVATE)
+            val token = pref?.getString("DEVICE_TOKEN", "UNDEFINED")
+            return token!!
+        }
+
+        fun setDeviceToken(context: Context, token: String) {
+            val pref = context.getSharedPreferences("DEVICE_TOKEN", MODE_PRIVATE)
+            pref.edit().apply {
+                putString("DEVICE_TOKEN", token)
+                apply()
+            }
+        }
     }
 }

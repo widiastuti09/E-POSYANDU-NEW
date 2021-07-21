@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.e_posyandu.contracts.LoginActivityContract
 import com.example.e_posyandu.databinding.ActivityLoginBinding
+import com.example.e_posyandu.models.User
 import com.example.e_posyandu.presenters.LoginActivityPresenter
 import com.example.e_posyandu.utilities.Constants
 
@@ -40,9 +41,14 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.LoginActivityVi
 
     override fun showToast(message: String) = Toast.makeText(this@LoginActivity, message, Toast.LENGTH_LONG).show()
 
-    override fun successLogin() {
-        startActivity(Intent(this@LoginActivity, MainActivity::class.java)).also{
-            finish()
+    override fun successLogin(user: User) {
+        val deviceToken = Constants.getDeviceToken(this@LoginActivity)
+        println("DEVICE TOKEN "+ deviceToken);
+        if(deviceToken != null || deviceToken != "UNDEFINED"){
+            presenter?.saveDeviceToken(user?.api_token!!, deviceToken)
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java)).also{
+                finish()
+            }
         }
     }
 

@@ -9,12 +9,7 @@ import com.example.e_posyandu.R
 import com.example.e_posyandu.databinding.ItemReminderBalitaBinding
 import kotlinx.android.synthetic.main.item_reminder_balita.view.*
 
-class ReminderBalitaActivityAdapter(private var array : Array<String>, private var context : Context) : RecyclerView.Adapter<ReminderBalitaActivityAdapter.ViewHolder>() {
-//    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)  {
-//        fun bind(array : String, context: Context){
-//            itemView.tvReminder.text = array
-//        }
-//    }
+class ReminderBalitaActivityAdapter(private var array : Array<String>) : RecyclerView.Adapter<ReminderBalitaActivityAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding : ItemReminderBalitaBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -24,7 +19,8 @@ class ReminderBalitaActivityAdapter(private var array : Array<String>, private v
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var no : Int = position + 1
-        holder.binding.tvReminder.text = no.toString() + ". "+array[position]
+        holder.binding.tvNo.text = no.toString() + ". "
+        holder.binding.tvReminder.text = array[position]
     }
 
     override fun getItemCount() = array.size

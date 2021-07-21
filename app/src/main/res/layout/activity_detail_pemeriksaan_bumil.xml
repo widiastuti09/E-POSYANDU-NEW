@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailPemeriksaanLansiaActivity">
+    tools:context=".DetailPemeriksaanBumilActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/DetailPemeriksaanBumil"
+        android:textColor="@color/black"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -22,7 +26,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+            app:layout_constraintTop_toBottomOf="@id/tvHeader">
 
             <TableRow android:layout_marginTop="20dip">
 
@@ -30,7 +34,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/tanggal"
+                    android:text="@string/namaBumil"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -43,10 +47,10 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tvTanggal"
+                    android:id="@+id/tvnamaBumil"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/tanggal"
+                    android:text="@string/namaBumil"
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     />
@@ -118,7 +122,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/LingkarPinggang"
+                    android:text="@string/Hemoglobin"
                     android:textColor="@color/black"
                     android:textSize="18sp"  />
 
@@ -131,10 +135,10 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tvLingkarPinggang"
+                    android:id="@+id/tvHemoglobin"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/LingkarPinggang"
+                    android:text="@string/Hemoglobin"
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     />
@@ -147,7 +151,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/TekananDarah"
+                    android:text="@string/HTP"
                     android:textColor="@color/black"
                     android:textSize="18sp"  />
 
@@ -160,13 +164,12 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tvTekananDarah"
+                    android:id="@+id/tvHTP"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/TekananDarah"
+                    android:text="@string/HTP"
                     android:layout_marginStart="10dp"
-                    android:textSize="18sp"
-                    />
+                    android:textSize="18sp" />
             </TableRow>
 
 
@@ -176,9 +179,9 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/Glukosa"
+                    android:text="@string/HPHT"
                     android:textColor="@color/black"
-                    android:textSize="18sp"  />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -186,42 +189,14 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tvGlukosa"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Glukosa"
-                    android:layout_marginStart="10dp"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     />
-            </TableRow>
-
-
-            <TableRow android:layout_marginTop="20dip">
 
                 <TextView
+                    android:id="@+id/tvHPHT"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/LemakTubuh"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"  />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/titikdua"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tvLemakTubuh"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/LemakTubuh"
+                    android:text="@string/HPHT"
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     />
@@ -233,7 +208,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/LemakPerut"
+                    android:text="@string/HamilKe"
                     android:textColor="@color/black"
                     android:textSize="18sp"  />
 
@@ -246,10 +221,10 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tvLemakPerut"
+                    android:id="@+id/tvHamilKe"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/LemakPerut"
+                    android:text="@string/HamilKe"
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     />
@@ -261,7 +236,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/IMT"
+                    android:text="@string/PersalinanKe"
                     android:textColor="@color/black"
                     android:textSize="18sp"  />
 
@@ -274,10 +249,10 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tvIMT"
+                    android:id="@+id/tvPersalinanKe"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/IMT"
+                    android:text="@string/PersalinanKe"
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     />
@@ -289,7 +264,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/Kolesterol"
+                    android:text="@string/JumlahKeguguran"
                     android:textColor="@color/black"
                     android:textSize="18sp"  />
 
@@ -302,112 +277,16 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tvKolesterol"
+                    android:id="@+id/tvJumlahKeguguran"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Kolesterol"
+                    android:text="@string/JumlahKeguguran"
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     />
             </TableRow>
 
-            <TableRow android:layout_marginTop="20dip">
-
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/AsamUrat"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"  />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/titikdua"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tvAsamUrat"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/AsamUrat"
-                    android:layout_marginStart="10dp"
-                    android:textSize="18sp"
-                    />
-            </TableRow>
-
-            <TableRow android:layout_marginTop="20dip">
-
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/Merokok"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"  />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/titikdua"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tvMerokok"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Merokok"
-                    android:layout_marginStart="10dp"
-                    android:textSize="18sp"
-                    />
-            </TableRow>
-
-            <TableRow android:layout_marginTop="20dip">
-
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/Keterangan"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"  />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/titikdua"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tvKeterangan"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Keterangan"
-                    android:layout_marginStart="10dp"
-                    android:textSize="18sp"
-                    />
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="20dip"
-                android:gravity="center_horizontal">
-                <Button
-                    android:id="@+id/btnPeringatan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Peringatan"
-                    android:textStyle="bold"/>
-            </TableRow>
 
         </TableLayout>
-
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

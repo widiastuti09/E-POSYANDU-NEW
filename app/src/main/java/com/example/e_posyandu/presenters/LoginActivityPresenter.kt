@@ -29,7 +29,7 @@ class LoginActivityPresenter(v : LoginActivityContract.LoginActivityView?) : Log
                     if (body != null && body.status.equals(200)) {
                         Constants.setToken(context, body?.data.api_token!!)
                         view?.showToast("Selamat datang ${body.data.name}")
-                        view?.successLogin()
+                        view?.successLogin(body.data)
                     }
                 } else {
                     view?.showToast("Terjadi kesalahan, silahkan coba lagi lain waktu")
@@ -40,6 +40,36 @@ class LoginActivityPresenter(v : LoginActivityContract.LoginActivityView?) : Log
             override fun onFailure(call: Call<WrappedResponse<User>>, t: Throwable) {
                 view?.showToast("Tidak bisa koneksi ke server")
                 view?.hideLoading()
+            }
+
+        })
+    }
+
+    override fun saveDeviceToken(token: String, device_token: String) {
+        val request = apiService.saveDeviceToken("Bearer " + token , device_token)
+        request.enqueue(object : Callback<WrappedResponse<String>>{
+            override fun onResponse(
+                call: Call<WrappedResponse<String>>,
+                response: Response<WrappedResponse<String>>
+            ) {
+                if(response.isSuccessful){
+                    val body = response.body()
+                    if(body != null){
+                        view?.showToast(body.message)
+                    }else{
+                        view?.showToast(body?.message!!)
+
+                    }
+                }else{
+                    view?.showToast(response.message())
+                    println("BODY "+ response.message())
+                    println("RESPONSE "+ response)
+                }
+            }
+
+            override fun onFailure(call: Call<WrappedResponse<String>>, t: Throwable) {
+                view?.showToast("Tidak bisa koneksi ke server")
+                println(t.message)
             }
 
         })

@@ -9,11 +9,15 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import com.example.e_posyandu.MainActivity
 import com.example.e_posyandu.R
+import com.example.e_posyandu.utilities.Constants
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
+@Suppress("DEPRECATION")
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onNewToken(p0: String) {
@@ -23,16 +27,20 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
+        println("DATA " + p0.data)
+
+        Log.d(TAG, "Message data payload: ${p0.data}")
 
         p0.notification?.let {
             showNotification(it.title.toString(), it.body.toString())
         }
     }
 
+
     private fun sendRegistrationToServer(token: String?) {
         // TODO: Implement this method to send token to your app server.
         Log.d(TAG, "sendRegistrationTokenToServer($token)")
-
+        Constants.setDeviceToken(applicationContext, token!!)
     }
 
     private fun showNotification(title:String,body: String) {
@@ -43,7 +51,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         val soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
-        val builder = NotificationCompat.Builder(this, "LogistikApp")
+        val builder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle(title)
             .setContentText(body)

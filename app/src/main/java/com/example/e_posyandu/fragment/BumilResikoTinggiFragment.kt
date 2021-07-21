@@ -1,5 +1,6 @@
 package com.example.e_posyandu.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,7 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_posyandu.DetailRestiBumilActivity
 import com.example.e_posyandu.R
+import com.example.e_posyandu.adapters.RestiBumilAdapter
+import com.example.e_posyandu.adapters.onClickRestiBumil
 import com.example.e_posyandu.contracts.BumilResikoTinggiFragmentContract
 import com.example.e_posyandu.databinding.FragmentBumilResikoTinggiBinding
 import com.example.e_posyandu.models.IbuHamilResikoTinggi
@@ -20,6 +25,7 @@ class BumilResikoTinggiFragment : Fragment(), BumilResikoTinggiFragmentContract.
     private var _binding : FragmentBumilResikoTinggiBinding? = null
     private val binding get() = _binding!!
     private var presenter : BumilResikoTinggiFragmentContract.presenter? = null
+    private lateinit var adapterRestiBumilFragment: RestiBumilAdapter
 
     companion object{
         private var idBumil : String? = null
@@ -46,12 +52,20 @@ class BumilResikoTinggiFragment : Fragment(), BumilResikoTinggiFragmentContract.
 
     override fun attacthToRecycler(bumilResikoTinggi: List<IbuHamilResikoTinggi>) {
         Log.d("BUmil Resti", " $bumilResikoTinggi")
-//        binding.tvUmurKehamilan.text = bumilResikoTinggi[0].umur_hamil + " Bulan"
-//        binding.tvGPA.text = bumilResikoTinggi[0].gpa
-//        binding.tvAsuransi.text = bumilResikoTinggi[0].asuransi
-//        binding.tvResikoTinggi.text = bumilResikoTinggi[0].resiko_tinggi
-//        binding.tvHPL.text = bumilResikoTinggi[0].hpl
-//        binding.tvWaliBumil.text = bumilResikoTinggi[0].wali_bumil
+        adapterRestiBumilFragment = RestiBumilAdapter(bumilResikoTinggi, object :  onClickRestiBumil {
+            override fun onClickDetail(restiBumil: IbuHamilResikoTinggi) {
+                val intentRestiBumilDetail = Intent(activity, DetailRestiBumilActivity::class.java).apply{
+                    putExtra("DETAIL_RESTI", restiBumil)
+                }
+                activity!!.startActivity(intentRestiBumilDetail)
+            }
+
+        })
+
+        binding.rvBumilResti.apply {
+            adapter = adapterRestiBumilFragment
+            layoutManager = LinearLayoutManager(requireActivity())
+        }
 
     }
 

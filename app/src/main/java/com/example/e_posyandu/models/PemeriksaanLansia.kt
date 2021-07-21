@@ -25,5 +25,6 @@ data class PemeriksaanLansia (
         @SerializedName("jelantah") var jelantah : String? = null,
         @SerializedName("merokok") var merokok : String? = null,
         @SerializedName("olahraga") var olahraga : String? = null,
-        @SerializedName("keterangan") var keterangan : String? = null
+        @SerializedName("keterangan") var keterangan : String? = null,
+        @SerializedName("penyakit") var penyakit : String? = null,
 ):Parcelable
