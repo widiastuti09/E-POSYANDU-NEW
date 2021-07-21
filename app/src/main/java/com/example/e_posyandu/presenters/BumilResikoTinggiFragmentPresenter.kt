@@ -21,11 +21,15 @@ class BumilResikoTinggiFragmentPresenter(v : BumilResikoTinggiFragmentContract.V
                 if (response.isSuccessful){
                     val body = response.body()
                     if (body != null && body.status.equals(200)){
-                        view?.attacthToRecycler(body?.data)
-
+                        if(body.data.size == 0){
+                            view?.emptyData()
+                        }else{
+                            view?.attacthToRecycler(body?.data)
+                        }
                     }
                 }else{
                     view?.showToast("Terjadi kesalahan, silahkan coba lagi lain waktu")
+                    println(response.message())
                 }
                 view?.hideLoading()
             }

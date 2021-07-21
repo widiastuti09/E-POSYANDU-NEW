@@ -13,6 +13,7 @@ data class PenimbanganAnak (
         @SerializedName("beratbadan") var beratbadan : String? = null,
         @SerializedName("imp") var imp : String? = null,
         @SerializedName("kia") var kia : String? = null,
-        @SerializedName("vitamin") var vitamin : String? = null
+        @SerializedName("vitamin") var vitamin : String? = null,
+        @SerializedName("penyakit") var penyakit : String? = null,
 
 ): Parcelable

@@ -13,5 +13,7 @@ data class IbuHamilResikoTinggi (
         @SerializedName("resiko_tinggi") var resiko_tinggi : String? = null,
         @SerializedName("hpl") var hpl : String? = null,
         @SerializedName("wali_bumil") var wali_bumil : String? = null,
-        @SerializedName("id_ibu") var id_ibu : String? = null
+        @SerializedName("id_ibu") var id_ibu : String? = null,
+        @SerializedName("created_at") var created_at : String? = null,
+        @SerializedName("updated_at") var updated_at : String? = null,
 ): Parcelable
