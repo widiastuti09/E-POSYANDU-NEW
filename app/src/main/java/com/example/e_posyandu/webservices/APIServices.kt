@@ -14,6 +14,13 @@ interface APIServices {
         @Field("password") password : String
     ) : Call<WrappedResponse<User>>
 
+    @FormUrlEncoded
+    @POST("save-token")
+    fun saveDeviceToken(
+        @Header("Authorization") token : String,
+        @Field("device_token") device_token : String
+    ) : Call<WrappedResponse<String>>
+
     @GET("balita")
     fun getBalita(
         @Header("Authorization") api_token : String

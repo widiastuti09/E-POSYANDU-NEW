@@ -16,5 +16,7 @@ data class PemeriksaanBumil(
         @SerializedName("hamilke") var hamilke : String? = null,
         @SerializedName("persalinanke") var persalinanke : String? = null,
         @SerializedName("keguguranke") var keguguranke : String? = null,
-        @SerializedName("id_ibu") var id_ibu : String? = null
+        @SerializedName("id_ibu") var id_ibu : String? = null,
+        @SerializedName("created_at") var created_at : String? = null,
+        @SerializedName("updated_at") var updated_at : String? = null,
 ):Parcelable

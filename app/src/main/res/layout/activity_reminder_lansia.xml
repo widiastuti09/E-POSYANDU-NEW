@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReminderBalitaActivity">
+    tools:context=".ReminderLansiaActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -30,29 +30,5 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/item_reminder_balita"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Segera bawa ke fasilitas pelayanan kesehatan jika :"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvReminderBalita" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvReminderBalitaDarurat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingVertical="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/item_reminder_balita"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

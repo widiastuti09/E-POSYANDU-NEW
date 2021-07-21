@@ -10,7 +10,7 @@ import com.example.e_posyandu.databinding.ItemBumilRestiBinding
 import com.example.e_posyandu.models.IbuHamilResikoTinggi
 import java.time.format.DateTimeFormatter
 
-class RestiBumilAdapter(private var restiBumil : List<IbuHamilResikoTinggi>, private var context : Context) : RecyclerView.Adapter<RestiBumilAdapter.MyViewHolder>() {
+class RestiBumilAdapter(private var restiBumil : List<IbuHamilResikoTinggi>, private var listener : onClickRestiBumil) : RecyclerView.Adapter<RestiBumilAdapter.MyViewHolder>() {
     inner class MyViewHolder(val binding: ItemBumilRestiBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -23,7 +23,15 @@ class RestiBumilAdapter(private var restiBumil : List<IbuHamilResikoTinggi>, pri
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyy")
 
         holder.binding.tvTanggal.text = tanggal!!.format(formatter)
+
+        holder.itemView.setOnClickListener {
+            listener.onClickDetail(restiBumil[position])
+        }
     }
 
     override fun getItemCount() = restiBumil.size
+}
+
+interface onClickRestiBumil{
+    fun onClickDetail(restiBumil: IbuHamilResikoTinggi)
 }

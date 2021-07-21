@@ -91,4 +91,5 @@
     <string name="waktu">Waktu</string>
     <string name="default_notification_channel_id">Posyandu</string>
     <string name="penyakit">Penyakit</string>
+    <string name="DetailPemeriksaanBumil">Detail Pemeriksaan Ibu Hamil</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.e_posyandu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.e_posyandu.databinding.ActivityDetailPemeriksaanLansiaBinding
@@ -15,11 +16,21 @@ class DetailPemeriksaanLansiaActivity : AppCompatActivity() {
         actionbar!!.title = "Detail Pemeriksaan"
         actionbar.setDisplayHomeAsUpEnabled(true)
         showDetailToView()
+        intentButton()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun intentButton(){
+        binding.btnPeringatan.setOnClickListener {
+            val intent = Intent(this@DetailPemeriksaanLansiaActivity, ReminderLansiaActivity::class.java).apply{
+                putExtra("PENYAKIT_LANSIA", getDetailPemeriksaanLansia().penyakit)
+            };
+            startActivity(intent)
+        }
     }
 
     private fun getDetailPemeriksaanLansia() : PemeriksaanLansia  = intent.getParcelableExtra("DetailpemeriksaanLansia")!!
