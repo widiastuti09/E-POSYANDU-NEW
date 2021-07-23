@@ -52,6 +52,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.LoginActivityVi
         }
     }
 
+
     override fun showLoading() {
         binding.btnLogin.isEnabled = false
         binding.loadingLogin.apply {

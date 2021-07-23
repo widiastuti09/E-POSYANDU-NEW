@@ -20,7 +20,7 @@ class PemeriksaanBumilFragmentAdapter(private var pemeriksaan : List<Pemeriksaan
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val tanggal = pemeriksaan[position].created_at
-        val formatter = DateTimeFormatter.ofPattern("dd.MM.yyy")
+        val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
 
         holder.binding.tvTanggal.text = tanggal!!.format(formatter)
         holder.itemView.setOnClickListener {

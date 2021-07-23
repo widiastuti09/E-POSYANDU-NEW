@@ -27,7 +27,9 @@ class LoginActivityPresenter(v : LoginActivityContract.LoginActivityView?) : Log
                 if (response.isSuccessful) {
                     val body = response.body()
                     if (body != null && body.status.equals(200)) {
-                        Constants.setToken(context, body?.data.api_token!!)
+                        Constants.setToken(context, body.data.api_token!!)
+                        Constants.setName(context, body.data.name!!)
+                        Constants.setEmail(context, body.data.email!!)
                         view?.showToast("Selamat datang ${body.data.name}")
                         view?.successLogin(body.data)
                     }

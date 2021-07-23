@@ -17,8 +17,20 @@ class TentangAplikasiFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         _binding = FragmentTentangAplikasiBinding.inflate(inflater, container, false)
+        setContentText()
         return binding.root
     }
 
+    private fun setContentText(){
+        val content = """
+             Aplikasi E-Posyandu dapat dimanfaatkan oleh
+             ibu yang memiliki Anak yang sudah 
+             terdaftar di kader posyandu masing-masing,
+             guna untuk memantau tumbuh kembang anak,
+             pencatatan imunisasi anak 
+             dan pendataan untuk ibu hamil
+        """.trimIndent()
+        binding.tvTentangContent.text = content
+    }
 
 }

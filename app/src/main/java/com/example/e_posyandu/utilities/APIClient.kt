@@ -64,5 +64,37 @@ class Constants {
                 apply()
             }
         }
+
+        fun setName(context: Context, name : String){
+            val pref = context.getSharedPreferences("NAME", MODE_PRIVATE)
+            pref.edit().putString("NAME", name).apply()
+        }
+
+        fun getName(context: Context): String{
+            val pref = context.getSharedPreferences("NAME", MODE_PRIVATE)
+            val name = pref.getString("NAME", "UNDEFINED")
+            return name!!
+        }
+
+        fun clearName(context: Context){
+            val pref = context.getSharedPreferences("NAME", MODE_PRIVATE)
+            pref.edit().clear().apply()
+        }
+
+        fun setEmail(context: Context, email : String){
+            val pref = context.getSharedPreferences("EMAIL", MODE_PRIVATE)
+            pref.edit().putString("EMAIL", email).apply()
+        }
+
+        fun getEmail(context: Context): String{
+            val pref = context.getSharedPreferences("EMAIL", MODE_PRIVATE)
+            val email = pref.getString("EMAIL", "UNDEFINED")
+            return email!!
+        }
+
+        fun clearEmail(context: Context){
+            val pref = context.getSharedPreferences("EMAIL", MODE_PRIVATE)
+            pref.edit().clear().apply()
+        }
     }
 }

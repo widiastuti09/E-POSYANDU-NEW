@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun logout(){
         Constants.clearToken(this@MainActivity)
+        Constants.clearName(this)
+        Constants.clearEmail(this)
         checkIsLoggedIn()
     }
 
