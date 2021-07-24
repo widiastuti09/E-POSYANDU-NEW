@@ -24,6 +24,13 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.LoginActivityVi
         supportActionBar?.hide()
         doLogin()
         hideLoading()
+        forgotPassword()
+    }
+
+    private fun forgotPassword(){
+        binding.tvForgotPassword.setOnClickListener {
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
     }
 
     private fun doLogin(){
