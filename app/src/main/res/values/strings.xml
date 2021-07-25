@@ -97,4 +97,5 @@
     <string name="submit">Kirim</string>
     <string name="BackToLogin">Back to login</string>
     <string name="VerificationCode">Kode Verifikasi</string>
+    <string name="comform_password">Masukan Ulang Password</string>
 </resources>
