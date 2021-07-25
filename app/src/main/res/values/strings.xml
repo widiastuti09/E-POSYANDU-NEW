@@ -92,4 +92,9 @@
     <string name="default_notification_channel_id">Posyandu</string>
     <string name="penyakit">Penyakit</string>
     <string name="DetailPemeriksaanBumil">Detail Pemeriksaan Ibu Hamil</string>
+    <string name="tentangAplikasi">Tentang Aplikasi</string>
+    <string name="InfoAkun">Info Akun</string>
+    <string name="submit">Kirim</string>
+    <string name="BackToLogin">Back to login</string>
+    <string name="VerificationCode">Kode Verifikasi</string>
 </resources>

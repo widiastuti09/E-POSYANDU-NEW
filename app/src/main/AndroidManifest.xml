@@ -3,7 +3,7 @@
     package="com.example.e_posyandu">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EPOSYANDU">
-        <activity android:name=".ReminderLansiaActivity"></activity>
+        <activity android:name=".VerificationActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".ReminderLansiaActivity" />
         <activity android:name=".DetailPemeriksaanBumilActivity" />
         <activity android:name=".DetailRestiBumilActivity" />
         <activity android:name=".ReminderBalitaActivity" />
