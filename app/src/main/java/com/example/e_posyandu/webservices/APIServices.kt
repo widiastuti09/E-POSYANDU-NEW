@@ -21,6 +21,26 @@ interface APIServices {
         @Field("device_token") device_token : String
     ) : Call<WrappedResponse<String>>
 
+    @FormUrlEncoded
+    @POST("reset-password")
+    fun resetPassword(
+        @Field("email") email : String
+    ) : Call<WrappedResponse<String>>
+
+    @FormUrlEncoded
+    @POST("verification-code")
+    fun verificationToken(
+        @Field("code_digit") code_digit : String
+    ) : Call<WrappedResponse<String>>
+
+    @FormUrlEncoded
+    @POST("ganti-password")
+    fun chagePassword(
+        @Field("password") password : String,
+        @Field("konfirmasi_password") konfirmasi_password: String,
+        @Field("code_digit") code_digit : String
+    ) : Call<WrappedResponse<String>>
+
     @GET("balita")
     fun getBalita(
         @Header("Authorization") api_token : String
@@ -59,22 +79,20 @@ interface APIServices {
 
     @GET("penimbangan-balita/{id}")
     fun getPenimbanganAnak(
-            @Header("Authorization") api_token: String,
-            @Path("id")id : String
+        @Header("Authorization") api_token: String,
+        @Path("id")id : String
     ): Call<WrappedListResponse<PenimbanganAnak>>
 
-
     @GET("pemeriksaan-bumil/{id}")
-        fun getPemeriksaanBumil(
-            @Header("Authorization") api_token: String,
-            @Path("id")id : String
-        ): Call<WrappedListResponse<PemeriksaanBumil>>
-
+    fun getPemeriksaanBumil(
+        @Header("Authorization") api_token: String,
+        @Path("id")id : String
+    ): Call<WrappedListResponse<PemeriksaanBumil>>
 
     @GET("pemeriksaan-lansia/{id}")
-        fun getPemeriksaanLansia(
-            @Header("Authorization") api_token: String,
-            @Path("id")id : String
-        ):Call<WrappedListResponse<PemeriksaanLansia>>
+    fun getPemeriksaanLansia(
+        @Header("Authorization") api_token: String,
+        @Path("id")id : String
+    ):Call<WrappedListResponse<PemeriksaanLansia>>
 
 }
