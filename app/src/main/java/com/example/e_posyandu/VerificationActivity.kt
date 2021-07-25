@@ -47,14 +47,14 @@ class VerificationActivity : AppCompatActivity(), VerificationTokenActivityContr
     }
 
     override fun showLoading() {
-        binding.loadingLogin.isIndeterminate = true
+//        binding.loadingLogin.isIndeterminate = true
     }
 
     override fun hideLoading() {
-        binding.loadingLogin.apply {
-            isIndeterminate = false
-            progress = 0
-            visibility = View.GONE
-        }
+//        binding.loadingLogin.apply {
+//            isIndeterminate = false
+//            progress = 0
+//            visibility = View.GONE
+//        }
     }
 }
