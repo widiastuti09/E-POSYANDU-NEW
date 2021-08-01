@@ -19,9 +19,24 @@
         <activity android:name=".DetailPemeriksaanBumilActivity" />
         <activity android:name=".DetailRestiBumilActivity" />
         <activity android:name=".ReminderBalitaActivity" />
-        <activity android:name=".DetailJadwalLansiaActivity" />
-        <activity android:name=".DetailJadwalBumilActivity" />
-        <activity android:name=".DetailJadwalAnakActivity" />
+        <activity android:name=".DetailJadwalLansiaActivity">
+            <intent-filter>
+                <action android:name="com.example.e_posyandu.JADWAL_LANSIA"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DetailJadwalBumilActivity" >
+            <intent-filter>
+                <action android:name="com.example.e_posyandu.JADWAL_BUMIL"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DetailJadwalAnakActivity" >
+            <intent-filter>
+                <action android:name="com.example.e_posyandu.JADWAL_BALITA"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

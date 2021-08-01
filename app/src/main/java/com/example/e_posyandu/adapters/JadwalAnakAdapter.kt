@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_posyandu.databinding.ItemJadwalAnakBinding
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalAnak
 import java.time.format.DateTimeFormatter
 
-class JadwalAnakAdapter(private var jadwal : List<JadwalAnak>, private val listener : JadwalAnakListener) : RecyclerView.Adapter<JadwalAnakAdapter.MyViewHolder>() {
+class JadwalAnakAdapter(private var jadwal : List<Jadwal>, private val listener : JadwalAnakListener) : RecyclerView.Adapter<JadwalAnakAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(val binding : ItemJadwalAnakBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -35,5 +36,5 @@ class JadwalAnakAdapter(private var jadwal : List<JadwalAnak>, private val liste
 }
 
 interface JadwalAnakListener{
-    fun onDetailJadwalAnak(jadwalAnak : JadwalAnak)
+    fun onDetailJadwalAnak(jadwalAnak : Jadwal)
 }

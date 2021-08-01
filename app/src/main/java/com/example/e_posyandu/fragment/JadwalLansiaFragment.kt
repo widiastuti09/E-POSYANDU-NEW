@@ -15,6 +15,7 @@ import com.example.e_posyandu.adapters.JadwalLansiaAdapter
 import com.example.e_posyandu.adapters.JadwalLansiaListener
 import com.example.e_posyandu.contracts.JadwalLansiaFragmentContract
 import com.example.e_posyandu.databinding.FragmentJadwalLansiaBinding
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalLansia
 import com.example.e_posyandu.presenters.JadwalLansiaFragmentPresenter
 import com.example.e_posyandu.utilities.Constants
@@ -48,12 +49,12 @@ class JadwalLansiaFragment : Fragment(), JadwalLansiaFragmentContract.View {
         presenter?.getJadwalLansia(token)
     }
 
-    override fun attacthToRecycler(jadwalLansia: List<JadwalLansia>) {
+    override fun attacthToRecycler(jadwalLansia: List<Jadwal>) {
         Log.d("Jadwal Lansia", " $jadwalLansia")
         jadwalLansiaAdapter = JadwalLansiaAdapter(jadwalLansia, object : JadwalLansiaListener{
-            override fun onDetailJadwalLansia(jadwalLansia: JadwalLansia) {
+            override fun onDetailJadwalLansia(jadwalLansia: Jadwal) {
                 startActivity(Intent(activity, DetailJadwalLansiaActivity::class.java).apply{
-                    putExtra("jadwalLansia", jadwalLansia)
+                    putExtra("jadwal", jadwalLansia)
                 })
             }
         })

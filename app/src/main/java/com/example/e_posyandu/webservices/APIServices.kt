@@ -49,7 +49,7 @@ interface APIServices {
     @GET("jadwal-balita")
     fun getJadwalBalita(
         @Header("Authorization") api_token : String
-    ): Call<WrappedListResponse<JadwalAnak>>
+    ): Call<WrappedListResponse<Jadwal>>
 
     @GET("ibu-hamil")
     fun getIbuHamil(
@@ -59,7 +59,7 @@ interface APIServices {
     @GET("jadwal-bumil")
     fun getJadwalBumil(
         @Header("Authorization") api_token : String
-    ): Call<WrappedListResponse<JadwalBumil>>
+    ): Call<WrappedListResponse<Jadwal>>
 
     @GET("Bumilresti/{id}")
     fun getBumilResti(
@@ -75,7 +75,7 @@ interface APIServices {
     @GET("jadwal-lansia")
     fun getJadwalLansia(
         @Header("Authorization") api_token : String
-    ): Call<WrappedListResponse<JadwalLansia>>
+    ): Call<WrappedListResponse<Jadwal>>
 
     @GET("penimbangan-balita/{id}")
     fun getPenimbanganAnak(

@@ -1,6 +1,7 @@
 package com.example.e_posyandu.presenters
 
 import com.example.e_posyandu.contracts.JadwalAnakFragmentContract
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalAnak
 import com.example.e_posyandu.responses.WrappedListResponse
 import com.example.e_posyandu.utilities.APIClient
@@ -16,10 +17,10 @@ class JadwalAnakFragmentPresenter(v : JadwalAnakFragmentContract.View?) : Jadwal
     override fun getJadwalAnak(token: String) {
         val request = apiServices.getJadwalBalita("Bearer "+ token)
         view?.showLoading()
-        request.enqueue(object : Callback<WrappedListResponse<JadwalAnak>> {
+        request.enqueue(object : Callback<WrappedListResponse<Jadwal>> {
             override fun onResponse(
-                call: Call<WrappedListResponse<JadwalAnak>>,
-                response: Response<WrappedListResponse<JadwalAnak>>
+                call: Call<WrappedListResponse<Jadwal>>,
+                response: Response<WrappedListResponse<Jadwal>>
             ) {
                 if (response.isSuccessful){
                     val body = response.body()
@@ -33,7 +34,7 @@ class JadwalAnakFragmentPresenter(v : JadwalAnakFragmentContract.View?) : Jadwal
                 view?.hideLoading()
             }
 
-            override fun onFailure(call: Call<WrappedListResponse<JadwalAnak>>, t: Throwable) {
+            override fun onFailure(call: Call<WrappedListResponse<Jadwal>>, t: Throwable) {
                 view?.showToast("Tidak dapat terkoneksi dengan server")
                 view?.hideLoading()
             }

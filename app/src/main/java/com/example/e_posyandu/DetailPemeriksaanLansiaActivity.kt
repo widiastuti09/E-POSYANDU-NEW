@@ -49,5 +49,6 @@ class DetailPemeriksaanLansiaActivity : AppCompatActivity() {
         binding.tvAsamUrat.setText(getDetailPemeriksaanLansia().asam_urat)
         binding.tvMerokok.setText(getDetailPemeriksaanLansia().merokok)
         binding.tvKeterangan.setText(getDetailPemeriksaanLansia().keterangan)
+        binding.tvPenyakit.setText(getDetailPemeriksaanLansia().penyakit)
     }
 }

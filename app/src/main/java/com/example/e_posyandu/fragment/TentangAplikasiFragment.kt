@@ -22,14 +22,7 @@ class TentangAplikasiFragment : Fragment() {
     }
 
     private fun setContentText(){
-        val content = """
-             Aplikasi E-Posyandu dapat dimanfaatkan oleh
-             ibu yang memiliki Anak yang sudah 
-             terdaftar di kader posyandu masing-masing,
-             guna untuk memantau tumbuh kembang anak,
-             pencatatan imunisasi anak 
-             dan pendataan untuk ibu hamil
-        """.trimIndent()
+        val content = "Aplikasi E-Posyandu dapat dimanfaatkan oleh ibu yang memiliki Anak yang sudah terdaftar di kader posyandu masing-masing, guna untuk memantau tumbuh kembang anak, pencatatan imunisasi anak dan pendataan untuk ibu hamil."
         binding.tvTentangContent.text = content
     }
 

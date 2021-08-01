@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_posyandu.databinding.ItemJadwalLansiaBinding
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalLansia
 
-class JadwalLansiaAdapter (private var jadwal : List<JadwalLansia>, private val listener : JadwalLansiaListener) : RecyclerView.Adapter<JadwalLansiaAdapter.MyViewHolder>(){
+class JadwalLansiaAdapter (private var jadwal : List<Jadwal>, private val listener : JadwalLansiaListener) : RecyclerView.Adapter<JadwalLansiaAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(val binding : ItemJadwalLansiaBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -28,5 +29,5 @@ class JadwalLansiaAdapter (private var jadwal : List<JadwalLansia>, private val 
 }
 
 interface JadwalLansiaListener{
-    fun onDetailJadwalLansia(jadwalLansia : JadwalLansia)
+    fun onDetailJadwalLansia(jadwalLansia : Jadwal)
 }
