@@ -14,6 +14,7 @@ import com.example.e_posyandu.adapters.JadwalAnakAdapter
 import com.example.e_posyandu.adapters.JadwalAnakListener
 import com.example.e_posyandu.contracts.JadwalAnakFragmentContract
 import com.example.e_posyandu.databinding.FragmentJadwalAnakBinding
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalAnak
 import com.example.e_posyandu.presenters.JadwalAnakFragmentPresenter
 import com.example.e_posyandu.utilities.Constants
@@ -50,12 +51,12 @@ class JadwalAnakFragment : Fragment(), JadwalAnakFragmentContract.View {
         presenter?.getJadwalAnak(token)
     }
 
-    override fun attacthToRecycler(jadwalAnak: List<JadwalAnak>) {
+    override fun attacthToRecycler(jadwalAnak: List<Jadwal>) {
         Log.d("Jadwal Anak", " $jadwalAnak")
         jadwalAnakAdapter = JadwalAnakAdapter(jadwalAnak, object : JadwalAnakListener{
-            override fun onDetailJadwalAnak(jadwalAnak: JadwalAnak) {
+            override fun onDetailJadwalAnak(jadwalAnak: Jadwal) {
                 startActivity(Intent(activity, DetailJadwalAnakActivity::class.java).apply{
-                    putExtra("jadwalAnak", jadwalAnak)
+                    putExtra("jadwal", jadwalAnak)
                 })
             }
         })

@@ -2,6 +2,7 @@ package com.example.e_posyandu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_posyandu.adapters.ReminderBalitaActivityAdapter
 import com.example.e_posyandu.databinding.ActivityReminderLansiaBinding
@@ -18,6 +19,8 @@ class ReminderLansiaActivity : AppCompatActivity() {
         binding = ActivityReminderLansiaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         attachToRecycler()
+        attachToRecyclerPenyebab()
+        parsePengertian()
         val actionbar = supportActionBar
         actionbar!!.setDisplayHomeAsUpEnabled(true)
         actionbar.title = "Peringatan"
@@ -42,12 +45,51 @@ class ReminderLansiaActivity : AppCompatActivity() {
         }else if(getPenyakit() == "Osteoporosis"){
             adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.osteoporosis)
         }else{
-            adapterReminder = ReminderBalitaActivityAdapter(arrayOf("Jagalah kesehatan selalu"))
+            binding.rvReminderBalita.visibility = View.GONE
+            binding.textView.visibility = View.GONE
         }
 
         binding.rvReminderBalita.apply {
             layoutManager = LinearLayoutManager(this@ReminderLansiaActivity)
             adapter = adapterReminder
+        }
+    }
+
+    private fun attachToRecyclerPenyebab() {
+        if(getPenyakit() == "Kolesterol"){
+            adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabKolesterol)
+        }else if(getPenyakit() == "Hipertensi"){
+            adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabHipertensi)
+        }else if(getPenyakit() == "Diabetes"){
+            adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabDiabetes)
+        }else if(getPenyakit() == "Asam urat"){
+            adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabAsamUrat)
+        }else if(getPenyakit() == "Osteoporosis"){
+            adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabOsteoporosis)
+        }else{
+            binding.rvpenyebab.visibility = View.GONE
+            binding.tvPenyebab.visibility = View.GONE
+        }
+
+        binding.rvpenyebab.apply {
+            layoutManager = LinearLayoutManager(this@ReminderLansiaActivity)
+            adapter = adapterReminder
+        }
+    }
+
+    private fun parsePengertian() {
+        if(getPenyakit() == "Kolesterol"){
+            binding.tvPengertian.text = ReminderLansia.pengertianKolesterol
+        }else if(getPenyakit() == "Hipertensi"){
+            binding.tvPengertian.text = ReminderLansia.pengertianHipertensi
+        }else if(getPenyakit() == "Diabetes"){
+            binding.tvPengertian.text = ReminderLansia.pengertianDiabetes
+        }else if(getPenyakit() == "Asam urat"){
+            binding.tvPengertian.text = ReminderLansia.pengertianAsamUrat
+        }else if(getPenyakit() == "Osteoporosis"){
+            binding.tvPengertian.text = ReminderLansia.pengertianOsteoporosis
+        }else{
+            binding.tvPengertian.visibility = View.GONE
         }
     }
 

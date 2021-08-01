@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.e_posyandu.databinding.ActivityMainBinding
 import com.example.e_posyandu.fragment.*
@@ -29,11 +30,26 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.nav_anak ->setCurrentFragment(CatatanAnakFragment())
-                R.id.nav_bumil ->setCurrentFragment(CatatanBumilFragment())
-                R.id.nav_lansia ->setCurrentFragment(CatatanLansiaFragment())
-                R.id.nav_about ->setCurrentFragment(TentangAplikasiFragment())
-                R.id.nav_account ->setCurrentFragment(AkunFragment())
+                R.id.nav_anak -> {
+                    setCurrentFragment(CatatanAnakFragment())
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                }
+                R.id.nav_bumil -> {
+                    setCurrentFragment(CatatanBumilFragment())
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                }
+                R.id.nav_lansia -> {
+                    setCurrentFragment(CatatanLansiaFragment())
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                }
+                R.id.nav_about -> {
+                    setCurrentFragment(TentangAplikasiFragment())
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                }
+                R.id.nav_account -> {
+                    setCurrentFragment(AkunFragment())
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                }
                 R.id.nav_logout -> logout()
             }
             true

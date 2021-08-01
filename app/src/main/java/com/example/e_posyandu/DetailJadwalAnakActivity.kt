@@ -3,6 +3,7 @@ package com.example.e_posyandu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.e_posyandu.databinding.ActivityDetailJadwalAnakBinding
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalAnak
 
 class DetailJadwalAnakActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class DetailJadwalAnakActivity : AppCompatActivity() {
         setContentView(binding.root)
         val actionbar = supportActionBar
         actionbar!!.setDisplayHomeAsUpEnabled(true)
-        actionbar.title = "Detail Jadwal"
+        actionbar.title = "Detail Jadwal Anak"
         showDataToView()
     }
 
@@ -22,7 +23,7 @@ class DetailJadwalAnakActivity : AppCompatActivity() {
         return true
     }
 
-    private fun getDetailJadwal(): JadwalAnak = intent.getParcelableExtra("jadwalAnak")!!
+    private fun getDetailJadwal(): Jadwal = intent.getParcelableExtra("jadwal")!!
 
     private fun showDataToView(){
         binding.tvtanggal.setText(getDetailJadwal().tanggal)

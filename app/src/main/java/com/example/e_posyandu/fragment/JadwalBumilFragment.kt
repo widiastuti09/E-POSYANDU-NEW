@@ -14,6 +14,7 @@ import com.example.e_posyandu.adapters.JadwalBumilAdapter
 import com.example.e_posyandu.adapters.JadwalBumilListener
 import com.example.e_posyandu.contracts.JadwalBumilFragmentContract
 import com.example.e_posyandu.databinding.FragmentJadwalBumilBinding
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalBumil
 import com.example.e_posyandu.presenters.JadwalBumilFragmentPresenter
 import com.example.e_posyandu.utilities.Constants
@@ -49,12 +50,12 @@ class JadwalBumilFragment : Fragment(), JadwalBumilFragmentContract.View {
         presenter?.getJadwalBumil(token)
     }
 
-    override fun attacthToRecycler(jadwalBumil: List<JadwalBumil>) {
+    override fun attacthToRecycler(jadwalBumil: List<Jadwal>) {
         Log.d("Jadwal Bumil", " $jadwalBumil")
         jadwalBumilAdapter = JadwalBumilAdapter(jadwalBumil, object : JadwalBumilListener{
-            override fun onDetailJadwalBumil(jadwalBumil: JadwalBumil) {
+            override fun onDetailJadwalBumil(jadwalBumil: Jadwal) {
                 startActivity(Intent(activity, DetailJadwalBumilActivity::class.java).apply{
-                    putExtra("jadwalBumil", jadwalBumil)
+                    putExtra("jadwal", jadwalBumil)
                 })
             }
         })

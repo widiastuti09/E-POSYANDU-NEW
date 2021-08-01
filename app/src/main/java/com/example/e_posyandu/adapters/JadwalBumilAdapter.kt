@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_posyandu.databinding.ItemJadwalBumilBinding
+import com.example.e_posyandu.models.Jadwal
 import com.example.e_posyandu.models.JadwalBumil
 
-class JadwalBumilAdapter(private var jadwal : List<JadwalBumil>, private val listener : JadwalBumilListener): RecyclerView.Adapter<JadwalBumilAdapter.MyViewHolder>() {
+class JadwalBumilAdapter(private var jadwal : List<Jadwal>, private val listener : JadwalBumilListener): RecyclerView.Adapter<JadwalBumilAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(val binding : ItemJadwalBumilBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -28,5 +29,5 @@ class JadwalBumilAdapter(private var jadwal : List<JadwalBumil>, private val lis
 }
 
 interface JadwalBumilListener{
-    fun onDetailJadwalBumil(jadwalBumil : JadwalBumil)
+    fun onDetailJadwalBumil(jadwalBumil : Jadwal)
 }

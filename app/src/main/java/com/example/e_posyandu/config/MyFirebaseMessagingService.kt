@@ -9,16 +9,16 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import androidx.work.OneTimeWorkRequest
-import androidx.work.WorkManager
-import com.example.e_posyandu.MainActivity
 import com.example.e_posyandu.R
+import com.example.e_posyandu.models.Jadwal
+import com.example.e_posyandu.models.JadwalAnak
 import com.example.e_posyandu.utilities.Constants
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
 @Suppress("DEPRECATION")
 class MyFirebaseMessagingService : FirebaseMessagingService() {
+    private lateinit var jadwalPosyandu : Jadwal
 
     override fun onNewToken(p0: String) {
         super.onNewToken(p0)
@@ -31,8 +31,15 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         Log.d(TAG, "Message data payload: ${p0.data}")
 
+        val id = p0.data["id"]
+        val tanggal = p0.data["tanggal"]
+        val waktu = p0.data["waktu"]
+        val keterangan = p0.data["keterangan"]
+        val status = p0.data["status"]
+        jadwalPosyandu = Jadwal(id, tanggal, waktu, keterangan, status)
+
         p0.notification?.let {
-            showNotification(it.title.toString(), it.body.toString())
+            showNotification(it.title.toString(), it.body.toString(), it.clickAction, jadwalPosyandu)
         }
     }
 
@@ -43,9 +50,11 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         Constants.setDeviceToken(applicationContext, token!!)
     }
 
-    private fun showNotification(title:String,body: String) {
+    private fun showNotification(title:String, body: String, clickAction: String?, jadwal: Jadwal?) {
         val channelId = getString(R.string.default_notification_channel_id)
-        val intent = Intent(this@MyFirebaseMessagingService, MainActivity::class.java)
+        val intent = Intent(clickAction).apply {
+            putExtra("jadwal", jadwal)
+        }
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
