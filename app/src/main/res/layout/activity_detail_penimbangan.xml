@@ -33,7 +33,7 @@
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/tanggal"
@@ -62,7 +62,7 @@
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/JenisImunisasi"
@@ -90,7 +90,7 @@
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/bb"
@@ -119,7 +119,7 @@
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/IMP"
@@ -148,7 +148,7 @@
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/KIA"
@@ -176,7 +176,7 @@
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/JenisVitamin"
@@ -204,7 +204,7 @@
         <TableRow android:layout_marginTop="20dip">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/penyakit"

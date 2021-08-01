@@ -31,7 +31,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/namaBumil"
@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -60,7 +60,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/beratBadan"
@@ -70,7 +70,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -90,7 +90,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/tinggibadan"
@@ -100,7 +100,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -119,7 +119,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/Hemoglobin"
@@ -129,7 +129,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -148,7 +148,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/HTP"
@@ -158,7 +158,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -176,7 +176,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/HPHT"
@@ -186,7 +186,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -205,7 +205,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/HamilKe"
@@ -215,7 +215,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -233,7 +233,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/PersalinanKe"
@@ -243,7 +243,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -261,7 +261,7 @@
             <TableRow android:layout_marginTop="20dip">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="@string/JumlahKeguguran"
@@ -271,7 +271,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/titikdua"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
