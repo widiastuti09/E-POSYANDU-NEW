@@ -95,5 +95,17 @@ class ReminderLansia {
             "Memasang karpet",
             "Menggunakan sandal khusus untuk mencegah terjatuh di kamar mandi"
         )
+
+        var pengertianEncok = "Encok adalah encok"
+
+        var penyebabEncok = arrayOf(
+                "Encok disebabkan karena kurang olahraga",
+                "Kurangnya tidur"
+        )
+
+        var encok = arrayOf(
+                "Tidur yang cukup",
+                "Olahraga yang sering ya boss"
+        )
     }
 }

@@ -6,7 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_posyandu.adapters.ReminderBalitaActivityAdapter
 import com.example.e_posyandu.databinding.ActivityReminderLansiaBinding
-import com.example.e_posyandu.utilities.ReminderBalita
+
 import com.example.e_posyandu.utilities.ReminderLansia
 
 class ReminderLansiaActivity : AppCompatActivity() {
@@ -44,9 +44,14 @@ class ReminderLansiaActivity : AppCompatActivity() {
             adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.asamUrat)
         }else if(getPenyakit() == "Osteoporosis"){
             adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.osteoporosis)
-        }else{
+        }else if(getPenyakit() == "Encok") {
+            adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.encok)
+        }
+        else{
             binding.rvReminderBalita.visibility = View.GONE
             binding.textView.visibility = View.GONE
+            adapterReminder = ReminderBalitaActivityAdapter(arrayOf())
+            binding.terimakasih.visibility = View.VISIBLE
         }
 
         binding.rvReminderBalita.apply {
@@ -66,9 +71,13 @@ class ReminderLansiaActivity : AppCompatActivity() {
             adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabAsamUrat)
         }else if(getPenyakit() == "Osteoporosis"){
             adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabOsteoporosis)
-        }else{
+        }else if(getPenyakit() == "Encok"){
+            adapterReminder = ReminderBalitaActivityAdapter(ReminderLansia.penyebabEncok)
+        }
+        else{
             binding.rvpenyebab.visibility = View.GONE
             binding.tvPenyebab.visibility = View.GONE
+            adapterReminder = ReminderBalitaActivityAdapter(arrayOf())
         }
 
         binding.rvpenyebab.apply {
@@ -88,7 +97,10 @@ class ReminderLansiaActivity : AppCompatActivity() {
             binding.tvPengertian.text = ReminderLansia.pengertianAsamUrat
         }else if(getPenyakit() == "Osteoporosis"){
             binding.tvPengertian.text = ReminderLansia.pengertianOsteoporosis
-        }else{
+        }else if(getPenyakit() == "Encok"){
+            binding.tvPengertian.text = ReminderLansia.pengertianEncok
+        }
+        else{
             binding.tvPengertian.visibility = View.GONE
         }
     }

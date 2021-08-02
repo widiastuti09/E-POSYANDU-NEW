@@ -61,20 +61,20 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         val soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
         val builder = NotificationCompat.Builder(this, channelId)
-            .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentTitle(title)
-            .setContentText(body)
-            .setAutoCancel(true)
-            .setSound(soundUri)
-            .setContentIntent(pendingIntent)
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(title)
+                .setContentText(body)
+                .setAutoCancel(true)
+                .setSound(soundUri)
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(getString(R.string.default_notification_channel_id),
-                "Channel human readable title",
-                NotificationManager.IMPORTANCE_DEFAULT)
+                    "Channel human readable title",
+                    NotificationManager.IMPORTANCE_DEFAULT)
             notificationManager.createNotificationChannel(channel)
         }
 
