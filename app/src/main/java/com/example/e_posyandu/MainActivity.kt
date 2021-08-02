@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         Constants.clearToken(this@MainActivity)
         Constants.clearName(this)
         Constants.clearEmail(this)
+        Constants.clearIdUser(this)
         checkIsLoggedIn()
     }
 

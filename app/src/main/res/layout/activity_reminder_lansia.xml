@@ -7,7 +7,21 @@
     android:padding="20dp"
     tools:context=".ReminderLansiaActivity">
 
+    <TextView
+        android:id="@+id/terimakasih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terima kasih telah menjaga kesehatan"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,16 +39,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
-                android:text="Osteoporosis adalah kondisi berkurangnya kepadatan tulang. Hal ini menyebabkan tulang menjadi keropos dan mudah patah. Osteoporosis jarang menimbulkan gejala dan biasanya baru diketahui ketika penderitanya jatuh atau mengalami cedera yang menyebabkan patah tulang."/>
+                android:text="Osteoporosis adalah kondisi berkurangnya kepadatan tulang. Hal ini menyebabkan tulang menjadi keropos dan mudah patah. Osteoporosis jarang menimbulkan gejala dan biasanya baru diketahui ketika penderitanya jatuh atau mengalami cedera yang menyebabkan patah tulang." />
 
             <TextView
                 android:id="@+id/tvPenyebab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="Penyebab :"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"/>
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvpenyebab"
@@ -50,8 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="Dianjurkan untuk :"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvReminderBalita"

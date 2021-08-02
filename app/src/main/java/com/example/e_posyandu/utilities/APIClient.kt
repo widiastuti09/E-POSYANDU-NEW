@@ -96,5 +96,21 @@ class Constants {
             val pref = context.getSharedPreferences("EMAIL", MODE_PRIVATE)
             pref.edit().clear().apply()
         }
+
+        fun setIdUser(context: Context, id : String){
+            val pref = context.getSharedPreferences("ID", MODE_PRIVATE)
+            pref.edit().putString("ID", id).apply()
+        }
+
+        fun getIdUser(context: Context): String{
+            val pref = context.getSharedPreferences("ID", MODE_PRIVATE)
+            val idUser = pref.getString("ID", "UNDEFINED")
+            return idUser!!
+        }
+
+        fun clearIdUser(context: Context){
+            val pref = context.getSharedPreferences("ID", MODE_PRIVATE)
+            pref.edit().clear().apply()
+        }
     }
 }

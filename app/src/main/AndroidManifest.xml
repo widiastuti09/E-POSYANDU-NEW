@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EPOSYANDU">
-        <activity android:name=".ChagePasswordActivity"/>
+        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".ChagePasswordActivity" />
         <activity android:name=".VerificationActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".ReminderLansiaActivity" />
@@ -21,20 +22,23 @@
         <activity android:name=".ReminderBalitaActivity" />
         <activity android:name=".DetailJadwalLansiaActivity">
             <intent-filter>
-                <action android:name="com.example.e_posyandu.JADWAL_LANSIA"></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
+                <action android:name="com.example.e_posyandu.JADWAL_LANSIA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailJadwalBumilActivity" >
+        <activity android:name=".DetailJadwalBumilActivity">
             <intent-filter>
-                <action android:name="com.example.e_posyandu.JADWAL_BUMIL"></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
+                <action android:name="com.example.e_posyandu.JADWAL_BUMIL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailJadwalAnakActivity" >
+        <activity android:name=".DetailJadwalAnakActivity">
             <intent-filter>
-                <action android:name="com.example.e_posyandu.JADWAL_BALITA"></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
+                <action android:name="com.example.e_posyandu.JADWAL_BALITA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".SplashScreenActivity">

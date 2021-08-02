@@ -2,6 +2,7 @@ package com.example.e_posyandu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_posyandu.adapters.ReminderBalitaActivityAdapter
 import com.example.e_posyandu.databinding.ActivityReminderBalitaBinding
@@ -43,6 +44,10 @@ class ReminderBalitaActivity : AppCompatActivity() {
             adapterReminder = ReminderBalitaActivityAdapter(ReminderBalita.arrayLuka)
         }else{
             adapterReminder = ReminderBalitaActivityAdapter(ReminderBalita.arrayKosong)
+            binding.rvReminderBalita.visibility = View.GONE
+            binding.terimakasih.visibility = View.VISIBLE
+            binding.textView.visibility = View.GONE
+
         }
 
         binding.rvReminderBalita.apply {
@@ -62,6 +67,8 @@ class ReminderBalitaActivity : AppCompatActivity() {
             adapterReminder = ReminderBalitaActivityAdapter(ReminderBalita.daruratLuka)
         }else{
             adapterReminder = ReminderBalitaActivityAdapter(arrayOf())
+            binding.rvReminderBalitaDarurat.visibility = View.GONE
+            binding.textView2.visibility = View.GONE
         }
 
         binding.rvReminderBalitaDarurat.apply {

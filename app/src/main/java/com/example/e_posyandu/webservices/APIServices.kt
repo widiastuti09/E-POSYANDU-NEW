@@ -95,4 +95,22 @@ interface APIServices {
         @Path("id")id : String
     ):Call<WrappedListResponse<PemeriksaanLansia>>
 
+    @FormUrlEncoded
+    @PUT("edit-profile/{id}")
+    fun editProfile(
+        @Header("Authorization") api_token: String,
+        @Path("id")id : String,
+        @Field("name")  name : String,
+        @Field("email")  email: String,
+        @Field("password")  password : String
+    ): Call<WrappedResponse<User>>
+
+    @FormUrlEncoded
+    @PUT("edit-profile/{id}")
+    fun editProfileWithoutPassword(
+            @Header("Authorization") api_token: String,
+            @Path("id")id : String,
+            @Field("name")  name : String,
+            @Field("email")  email: String,
+    ): Call<WrappedResponse<User>>
 }

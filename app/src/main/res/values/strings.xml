@@ -99,4 +99,8 @@
     <string name="VerificationCode">Kode Verifikasi</string>
     <string name="comform_password">Masukan Ulang Password</string>
     <string name="lorem">LOrekmajdfkndhfbdjgahvgsdvagshdsvadghavshdgcasdghacsdhgscdahgdcasdhasdcgasdsdhjasdhsadvsjahdahdahsdkjhwrgkyerbif</string>
+    <string name="EditProfile">Edit Profiles</string>
+    <string name="nama">Nama</string>
+    <string name="KonfirmasiPassword">Konfirmasi Password</string>
+    <string name="GantiPassword">Ubah Password</string>
 </resources>
