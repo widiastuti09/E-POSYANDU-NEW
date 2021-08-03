@@ -30,7 +30,7 @@ class DetailRestiBumilActivity : AppCompatActivity() {
     private fun attachToView(){
         binding.tvnamaBumil.text = getRestiBumilDetail().id_ibu
         binding.tvAsuransi.text = getRestiBumilDetail().asuransi
-        binding.tvUmurKehamilan.text = getRestiBumilDetail().umur_hamil
+        binding.tvUmurKehamilan.text = getRestiBumilDetail().umur_hamil + " Bulan"
         binding.tvGPA.text = getRestiBumilDetail().gpa
         binding.tvResikoTinggi.text = getRestiBumilDetail().resiko_tinggi
         binding.tvHPL.text = getRestiBumilDetail().hpl

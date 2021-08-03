@@ -3,6 +3,7 @@ package com.example.e_posyandu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.e_posyandu.databinding.ActivityDetailPemeriksaanBumilBinding
+import com.example.e_posyandu.models.IbuHamil
 import com.example.e_posyandu.models.PemeriksaanBumil
 
 class DetailPemeriksaanBumilActivity : AppCompatActivity() {
@@ -28,8 +29,8 @@ class DetailPemeriksaanBumilActivity : AppCompatActivity() {
 
     private fun attacthToView(){
         binding.tvnamaBumil.text = getDetailPemeriksaanBumil().id_ibu
-        binding.tvBeratBadan.text = getDetailPemeriksaanBumil().beratbadan
-        binding.tvTinggiBadan.text = getDetailPemeriksaanBumil().tinggibadan
+        binding.tvBeratBadan.text = getDetailPemeriksaanBumil().beratbadan + " Kg"
+        binding.tvTinggiBadan.text = getDetailPemeriksaanBumil().tinggibadan + " Cm"
         binding.tvHemoglobin.text = getDetailPemeriksaanBumil().hemoglobin_atas +"/"+getDetailPemeriksaanBumil().hemoglobin_bawah
         binding.tvHTP.text = getDetailPemeriksaanBumil().htp
         binding.tvHPHT.text = getDetailPemeriksaanBumil().hpht
