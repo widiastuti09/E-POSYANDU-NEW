@@ -19,10 +19,7 @@ class RestiBumilAdapter(private var restiBumil : List<IbuHamilResikoTinggi>, pri
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val tanggal = restiBumil[position].created_at
-        val formatter = DateTimeFormatter.ofPattern("dd/MM/yyy")
-
-        holder.binding.tvTanggal.text = tanggal!!.format(formatter)
+        holder.binding.tvTanggal.text = restiBumil[position].created_at!!.substring(0,10)
 
         holder.itemView.setOnClickListener {
             listener.onClickDetail(restiBumil[position])

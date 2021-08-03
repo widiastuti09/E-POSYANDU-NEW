@@ -30,7 +30,7 @@ class APIClient {
 
 class Constants {
     companion object {
-        const val API_ENDPOINT = "https://pos-yandu.herokuapp.com/api/"
+        const val API_ENDPOINT = "https://e-posyanduku.herokuapp.com/api/"
 
         fun getToken(context: Context): String {
             val pref = context.getSharedPreferences("TOKEN", MODE_PRIVATE)
