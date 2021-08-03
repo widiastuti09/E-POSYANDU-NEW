@@ -8,6 +8,8 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_posyandu.databinding.ItemKesehatanBumilBinding
 import com.example.e_posyandu.models.PemeriksaanBumil
+import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class PemeriksaanBumilFragmentAdapter(private var pemeriksaan : List<PemeriksaanBumil>, private val listener : onPemeriksaanBumilListener) : RecyclerView.Adapter<PemeriksaanBumilFragmentAdapter.MyViewHolder>(){
@@ -19,10 +21,8 @@ class PemeriksaanBumilFragmentAdapter(private var pemeriksaan : List<Pemeriksaan
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val tanggal = pemeriksaan[position].created_at
-        val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
 
-        holder.binding.tvTanggal.text = tanggal!!.format(formatter)
+        holder.binding.tvTanggal.text = pemeriksaan[position].created_at!!.substring(0,10)
         holder.itemView.setOnClickListener {
             listener.onDetailClick(pemeriksaan[position])
         }
