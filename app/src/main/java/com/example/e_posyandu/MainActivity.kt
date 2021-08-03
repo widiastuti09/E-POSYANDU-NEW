@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkIsLoggedIn(){
         val token = Constants.getToken(this@MainActivity)
-        if(token == null || token.equals("UNDEFINED")){
+        if(token.equals("UNDEFINED")){
             startActivity(Intent(this@MainActivity, LoginActivity::class.java).also { finish() })
         }
     }

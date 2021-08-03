@@ -148,7 +148,7 @@
                         android:layout_marginStart="10dp"
                         android:textSize="18sp"
                         android:minLines="2"
-                        android:maxWidth="200dp"
+                        android:maxWidth="150dp"
                         />
                 </TableRow>
 
