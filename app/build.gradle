@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
 
 dependencies {
@@ -73,4 +76,7 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-installations-ktx:17.0.0'
     implementation 'androidx.work:work-runtime:2.5.0'
+
+//    chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

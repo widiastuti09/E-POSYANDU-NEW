@@ -103,4 +103,9 @@
     <string name="nama">Nama</string>
     <string name="KonfirmasiPassword">Konfirmasi Password</string>
     <string name="GantiPassword">Ubah Password</string>
+    <string name="jenis_imunisasi">Jenis Imunisasi</string>
+    <string name="status_imunisasi_anak">Status Imunisasi Anak</string>
+    <string name="tanggal_imunisasi">Tanggal Imunisasi</string>
+    <string name="grafik_penimbangan">Grafik Penimbangan</string>
+    <string name="tanggal_penimbangan">Tanggal Penimbangan ( Umur dalam bulan )</string>
 </resources>

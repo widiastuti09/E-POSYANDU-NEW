@@ -15,5 +15,6 @@ data class PenimbanganAnak (
         @SerializedName("kia") var kia : String? = null,
         @SerializedName("vitamin") var vitamin : String? = null,
         @SerializedName("penyakit") var penyakit : String? = null,
+        @SerializedName("umur") var umur : String? = null
 
 ): Parcelable

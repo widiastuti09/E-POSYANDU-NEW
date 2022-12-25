@@ -10,7 +10,7 @@ interface APIServices {
     @FormUrlEncoded
     @POST("login-mobile")
     fun loginMobile(
-        @Field("email") email : String,
+        @Field("nik") email : String,
         @Field("password") password : String
     ) : Call<WrappedResponse<User>>
 
@@ -113,4 +113,10 @@ interface APIServices {
             @Field("name")  name : String,
             @Field("email")  email: String,
     ): Call<WrappedResponse<User>>
+
+    @GET("status-imunisasi/{id}")
+    fun getStatusImunisasi(
+        @Header("Authorization") api_token: String,
+        @Path("id") id: String
+    ):Call<WrappedListResponse<StatusImunisasi>>
 }
