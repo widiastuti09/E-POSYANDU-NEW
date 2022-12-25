@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/activity_detail_catatan_anak.xml" value="0.10182370820668693" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/fragment_grafik_penimbangan.xml" value="0.22" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/fragment_imunisasi_anak.xml" value="0.10182370820668693" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/fragment_jadwal_anak.xml" value="0.10182370820668693" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/fragment_penimbangan_anak.xml" value="0.10182370820668693" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/fragment_status_imunisasi.xml" value="0.2" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/fragment_tentang_aplikasi.xml" value="0.10182370820668693" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/item_jadwal_lansia.xml" value="0.10182370820668693" />
+        <entry key="..\:/SFiles/AndroidProjects/_2022/E-POSYANDU/app/src/main/res/layout/item_status_imunisasi.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

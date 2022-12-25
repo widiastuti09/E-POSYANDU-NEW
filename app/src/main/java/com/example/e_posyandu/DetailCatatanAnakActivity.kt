@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.e_posyandu.adapters.ViewPagerAnakAdapter
 import com.example.e_posyandu.databinding.ActivityDetailCatatanAnakBinding
+import com.example.e_posyandu.fragment.GrafikPenimbanganFragment
 import com.example.e_posyandu.fragment.JadwalAnakFragment
 import com.example.e_posyandu.fragment.PenimbanganAnakFragment
+import com.example.e_posyandu.fragment.StatusImunisasiFragment
 
 class DetailCatatanAnakActivity : AppCompatActivity() {
 
@@ -31,8 +33,12 @@ class DetailCatatanAnakActivity : AppCompatActivity() {
         val anakViewPager = ViewPagerAnakAdapter(supportFragmentManager)
         val fragmentPenimbangan = PenimbanganAnakFragment.getUserIdAnak(userId!!)
         val fragmentJadwal = JadwalAnakFragment.getUserIdAnak(userId)
+        val fragmentImunisasi = StatusImunisasiFragment.getUserIdAnak(userId)
+        val fragmentGrafik = GrafikPenimbanganFragment.newInstance(userId);
         anakViewPager.addFragment(fragmentJadwal, userId)
         anakViewPager.addFragment(fragmentPenimbangan, userId)
+        anakViewPager.addFragment(fragmentImunisasi, userId)
+        anakViewPager.addFragment(fragmentGrafik, userId)
         binding.viewPager.adapter = anakViewPager
         binding.tabs.setupWithViewPager(binding.viewPager)
         println("UserId Detail = $userId")

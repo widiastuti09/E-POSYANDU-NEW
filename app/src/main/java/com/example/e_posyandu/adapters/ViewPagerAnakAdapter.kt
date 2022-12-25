@@ -3,8 +3,10 @@ package com.example.e_posyandu.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.e_posyandu.fragment.GrafikPenimbanganFragment
 import com.example.e_posyandu.fragment.JadwalAnakFragment
 import com.example.e_posyandu.fragment.PenimbanganAnakFragment
+import com.example.e_posyandu.fragment.StatusImunisasiFragment
 import java.util.*
 
 @Suppress("DEPRECATION")
@@ -19,8 +21,14 @@ class ViewPagerAnakAdapter(supportFragmentManager: FragmentManager): FragmentPag
             0 -> {
                 JadwalAnakFragment()
             }
-            else ->{
+            1 ->{
                 PenimbanganAnakFragment()
+            }
+            2 -> {
+                StatusImunisasiFragment()
+            }
+            else -> {
+                GrafikPenimbanganFragment()
             }
         }
     }
@@ -37,7 +45,9 @@ class ViewPagerAnakAdapter(supportFragmentManager: FragmentManager): FragmentPag
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position){
             0 -> "Jadwal"
-            else -> "Penimbangan"
+            1 -> "Penimbangan"
+            2 -> "Imunisasi"
+            else -> "Grafik Penimbangan"
 
         }
     }
