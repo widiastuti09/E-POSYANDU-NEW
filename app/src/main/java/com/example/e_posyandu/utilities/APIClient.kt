@@ -65,52 +65,69 @@ class Constants {
             }
         }
 
-        fun setName(context: Context, name : String){
+        fun setName(context: Context, name: String) {
             val pref = context.getSharedPreferences("NAME", MODE_PRIVATE)
             pref.edit().putString("NAME", name).apply()
         }
 
-        fun getName(context: Context): String{
+        fun getName(context: Context): String {
             val pref = context.getSharedPreferences("NAME", MODE_PRIVATE)
             val name = pref.getString("NAME", "UNDEFINED")
             return name!!
         }
 
-        fun clearName(context: Context){
+        fun clearName(context: Context) {
             val pref = context.getSharedPreferences("NAME", MODE_PRIVATE)
             pref.edit().clear().apply()
         }
 
-        fun setEmail(context: Context, email : String){
+        fun setEmail(context: Context, email: String) {
             val pref = context.getSharedPreferences("EMAIL", MODE_PRIVATE)
             pref.edit().putString("EMAIL", email).apply()
         }
 
-        fun getEmail(context: Context): String{
+        fun getEmail(context: Context): String {
             val pref = context.getSharedPreferences("EMAIL", MODE_PRIVATE)
             val email = pref.getString("EMAIL", "UNDEFINED")
             return email!!
         }
 
-        fun clearEmail(context: Context){
+        fun clearEmail(context: Context) {
             val pref = context.getSharedPreferences("EMAIL", MODE_PRIVATE)
             pref.edit().clear().apply()
         }
 
-        fun setIdUser(context: Context, id : String){
+        fun setIdUser(context: Context, id: String) {
             val pref = context.getSharedPreferences("ID", MODE_PRIVATE)
             pref.edit().putString("ID", id).apply()
         }
 
-        fun getIdUser(context: Context): String{
+        fun getIdUser(context: Context): String {
             val pref = context.getSharedPreferences("ID", MODE_PRIVATE)
             val idUser = pref.getString("ID", "UNDEFINED")
             return idUser!!
         }
 
-        fun clearIdUser(context: Context){
+        fun clearIdUser(context: Context) {
             val pref = context.getSharedPreferences("ID", MODE_PRIVATE)
             pref.edit().clear().apply()
         }
+
+        fun setRole(context: Context, name: String) {
+            val pref = context.getSharedPreferences("ROLE", MODE_PRIVATE)
+            pref.edit().putString("ROLE", name).apply()
+        }
+
+        fun getRole(context: Context): String {
+            val pref = context.getSharedPreferences("ROLE", MODE_PRIVATE)
+            val name = pref.getString("ROLE", "UNDEFINED")
+            return name!!
+        }
+
+        fun clearRole(context: Context) {
+            val pref = context.getSharedPreferences("ROLE", MODE_PRIVATE)
+            pref.edit().clear().apply()
+        }
+
     }
 }

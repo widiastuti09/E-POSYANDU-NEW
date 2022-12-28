@@ -3,6 +3,7 @@ package com.example.e_posyandu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -12,6 +13,8 @@ import androidx.fragment.app.Fragment
 import com.example.e_posyandu.databinding.ActivityMainBinding
 import com.example.e_posyandu.fragment.*
 import com.example.e_posyandu.utilities.Constants
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
@@ -21,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setCurrentFragment(CatatanAnakFragment())
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout,R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -56,11 +58,37 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun checkRole(){
+        binding.navigationView.menu.findItem(R.id.nav_anak).isVisible = true
+        binding.navigationView.menu.findItem(R.id.nav_bumil).isVisible = true
+        binding.navigationView.menu.findItem(R.id.nav_lansia).isVisible = true
+        if(Constants.getRole(this) == "ibuhamil"){
+            navRoleIbuHamil()
+            setCurrentFragment(CatatanBumilFragment())
+        }else{
+            navRoleLansia()
+            setCurrentFragment(CatatanLansiaFragment())
+        }
+    }
+
+    private fun navRoleIbuHamil(){
+        binding.navigationView.menu.findItem(R.id.nav_anak).isVisible = true
+        binding.navigationView.menu.findItem(R.id.nav_bumil).isVisible = true
+        binding.navigationView.menu.findItem(R.id.nav_lansia).isVisible = false
+    }
+
+    private fun navRoleLansia(){
+        binding.navigationView.menu.findItem(R.id.nav_anak).isVisible = false
+        binding.navigationView.menu.findItem(R.id.nav_bumil).isVisible = false
+        binding.navigationView.menu.findItem(R.id.nav_lansia).isVisible = true
+    }
+
     private fun logout(){
         Constants.clearToken(this@MainActivity)
         Constants.clearName(this)
         Constants.clearEmail(this)
         Constants.clearIdUser(this)
+        Constants.clearRole(this)
         checkIsLoggedIn()
     }
 
@@ -81,5 +109,10 @@ class MainActivity : AppCompatActivity() {
         if(token.equals("UNDEFINED")){
             startActivity(Intent(this@MainActivity, LoginActivity::class.java).also { finish() })
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        checkRole()
     }
 }
