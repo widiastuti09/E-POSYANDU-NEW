@@ -31,6 +31,7 @@ class LoginActivityPresenter(v : LoginActivityContract.LoginActivityView?) : Log
                         Constants.setIdUser(context, body.data.id!!)
                         Constants.setName(context, body.data.name!!)
                         Constants.setEmail(context, body.data.email!!)
+                        Constants.setRole(context, body.data.role!!)
                         view?.showToast("Selamat datang ${body.data.name}")
                         view?.successLogin(body.data)
                     }
